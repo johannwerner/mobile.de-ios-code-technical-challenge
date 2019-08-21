@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.1)
+  - Kingfisher (5.7.1)
   - PureLayout (3.1.4)
   - R.swift (5.0.3):
     - R.swift.Library (~> 5.0.0)
@@ -18,6 +19,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (= 4.8.1)
+  - Kingfisher
   - PureLayout
   - R.swift (= 5.0.3)
   - RxAlamofire (= 5.0.0)
@@ -26,6 +28,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Kingfisher
     - PureLayout
     - R.swift
     - R.swift.Library
@@ -36,6 +39,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  Kingfisher: 176d377ad339113c99ad4980cbae687f807e20fe
   PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
   R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
   R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
@@ -44,6 +48,6 @@ SPEC CHECKSUMS:
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
 
-PODFILE CHECKSUM: 817aba885917cd70378f0b105237691c577fd311
+PODFILE CHECKSUM: 3e9cfb3c878e3ad5d5c589839b44e8861b1b7d31
 
 COCOAPODS: 1.7.0

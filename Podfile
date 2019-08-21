@@ -15,7 +15,7 @@ def shared_pods
     # Network layer abstraction
     pod 'Alamofire', '4.8.1'
     pod 'RxAlamofire', '5.0.0'
-    pod 'Kingfisher'
+    pod 'Kingfisher', '5.7.1'
 end
 
 
