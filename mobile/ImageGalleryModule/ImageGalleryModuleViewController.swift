@@ -13,6 +13,7 @@ class ImageGalleryModuleViewController: UIViewController {
     
     // MARK: View components
     private let someButton = UIButton()
+    private let collectionView: UICollectionView
     
     // MARK: Tooling
     private let disposeBag = DisposeBag()
@@ -21,6 +22,8 @@ class ImageGalleryModuleViewController: UIViewController {
     
     init(viewModel: ImageGalleryModuleViewModel) {
         self.viewModel = viewModel
+        let collectionViewLayout = UICollectionViewLayout()
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         super.init(nibName: nil, bundle: nil)
     }
 

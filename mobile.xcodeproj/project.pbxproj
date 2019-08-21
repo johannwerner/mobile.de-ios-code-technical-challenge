@@ -29,6 +29,7 @@
 		934082E8230AEAAF0073A6FD /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934082E3230AEAAF0073A6FD /* Async.swift */; };
 		934082EA230AF0270073A6FD /* ImageGalleryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934082E9230AF0270073A6FD /* ImageGalleryModel.swift */; };
 		934082EC230AF2630073A6FD /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934082EB230AF2630073A6FD /* ObservableType.swift */; };
+		93586C8E230D403D00E4E218 /* ImageGalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586C8D230D403D00E4E218 /* ImageGalleryCollectionViewCell.swift */; };
 		C0CCB50BA5FAC381FBD8D715 /* Pods_mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC41C88221540D61F7F80DA0 /* Pods_mobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		934082E3230AEAAF0073A6FD /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		934082E9230AF0270073A6FD /* ImageGalleryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryModel.swift; sourceTree = "<group>"; };
 		934082EB230AF2630073A6FD /* ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
+		93586C8D230D403D00E4E218 /* ImageGalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		9B9A5531CD37C346273EA6E9 /* Pods-mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobile.release.xcconfig"; path = "Target Support Files/Pods-mobile/Pods-mobile.release.xcconfig"; sourceTree = "<group>"; };
 		BE44E8C14037ACBE69E721AD /* Pods-mobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileTests.debug.xcconfig"; path = "Target Support Files/Pods-mobileTests/Pods-mobileTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C643EF69DA2B4F2ED6DF9218 /* Pods_mobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +165,8 @@
 		934082CC230AE9830073A6FD /* ImageGalleryModule */ = {
 			isa = PBXGroup;
 			children = (
+				93586C8C230D3B6600E4E218 /* ImageGalleryCollectionViewCell */,
+				93586C8B230D3AF400E4E218 /* Module */,
 				934082CE230AE9A00073A6FD /* ImageGalleryModuleUseCase.swift */,
 				934082CF230AE9A00073A6FD /* ImageGalleryModuleViewController.swift */,
 				934082D0230AE9A00073A6FD /* ImageGalleryModuleInteractor.swift */,
@@ -171,7 +175,6 @@
 				934082D2230AE9A00073A6FD /* ImageGalleryModuleInteractorApi.swift */,
 				934082D4230AE9A00073A6FD /* ImageGalleryModuleConfigurator.swift */,
 				934082CD230AE9A00073A6FD /* ImageGalleryModuleCoordinator.swift */,
-				934082E9230AF0270073A6FD /* ImageGalleryModel.swift */,
 			);
 			path = ImageGalleryModule;
 			sourceTree = "<group>";
@@ -195,6 +198,22 @@
 				934082E1230AEAAF0073A6FD /* Array+Mobile.swift */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		93586C8B230D3AF400E4E218 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				934082E9230AF0270073A6FD /* ImageGalleryModel.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		93586C8C230D3B6600E4E218 /* ImageGalleryCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				93586C8D230D403D00E4E218 /* ImageGalleryCollectionViewCell.swift */,
+			);
+			path = ImageGalleryCollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,6 +395,7 @@
 				934082DB230AE9A00073A6FD /* ImageGalleryModuleViewModel.swift in Sources */,
 				934082E5230AEAAF0073A6FD /* String+Mobile.swift in Sources */,
 				934082E6230AEAAF0073A6FD /* Array+Mobile.swift in Sources */,
+				93586C8E230D403D00E4E218 /* ImageGalleryCollectionViewCell.swift in Sources */,
 				934082E4230AEAAF0073A6FD /* Decodable+Utils.swift in Sources */,
 				934082E7230AEAAF0073A6FD /* NSObject+Mobile.swift in Sources */,
 				934082DA230AE9A00073A6FD /* ImageGalleryModuleInteractorApi.swift in Sources */,

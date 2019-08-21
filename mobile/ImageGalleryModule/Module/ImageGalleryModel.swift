@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ImageGalleryModule: Codable {
+struct ImageGalleryModel: Codable {
     var uri: String
     var smallImageUrl: String {
         return "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/SB_8277397.jpg/150px-SB_8277397.jpg"
