@@ -35,15 +35,18 @@ extension ImageGalleryModuleCoordinator {
 // MARK: - Navigation OUT
 
 extension ImageGalleryModuleCoordinator {
-    func showLargeImage(imageGalleryModel: ImageGalleryModel, animted: Bool) {
-        let model = MainImageModel(imageGalleryModel: imageGalleryModel)
+    func showLargeImage(imageGalleryModels: [ImageGalleryModel], selectedIndex: Int, animted: Bool) {
+        let model = MainImageModel(
+            imageGalleryModels: imageGalleryModels,
+            selectedIndex: selectedIndex
+        )
         let interactor = MainImageInteractorApi()
         let configurator = MainImageConfigurator(mainImageInteractor: interactor)
         
         let coordinator = MainImageCoordinator(navigationController: navigationController, configurator: configurator)
         
         coordinator.showLargeImage(
-            models: [model],
+            model: model,
             animated: true
         )
     }
@@ -51,8 +54,24 @@ extension ImageGalleryModuleCoordinator {
 
 // MARK: - MainImageModel Dependancy
 private extension MainImageModel {
+    init(
+        imageGalleryModels: [ImageGalleryModel],
+        selectedIndex: Int
+        ) {
+        let mainImageModels = imageGalleryModels.compactMap { imageGalleryModel -> MainImageModel.ImageModel? in
+            return MainImageModel.ImageModel(bigImageUrl: imageGalleryModel.bigImageUrl)
+        }
+        let model = MainImageModel(
+            selectedIndex: selectedIndex,
+            models: mainImageModels
+        )
+        self = model
+    }
+}
+
+private extension MainImageModel.ImageModel {
     init(imageGalleryModel: ImageGalleryModel) {
-        let model = MainImageModel(bigImageUrl: imageGalleryModel.bigImageUrl)
+        let model = MainImageModel.ImageModel(bigImageUrl: imageGalleryModel.bigImageUrl)
         self = model
     }
 }

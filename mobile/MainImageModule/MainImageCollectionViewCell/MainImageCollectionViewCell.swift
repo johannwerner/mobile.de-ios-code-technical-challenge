@@ -25,7 +25,7 @@ class MainImageCollectionViewCell: UICollectionViewCell {
 
 // MARK: - Public
 extension MainImageCollectionViewCell {
-    func fill(with model: MainImageModel) {
+    func fill(with model: MainImageModel.ImageModel) {
         imageView.setRemoteImage(with: model.bigImageUrl)
     }
 }

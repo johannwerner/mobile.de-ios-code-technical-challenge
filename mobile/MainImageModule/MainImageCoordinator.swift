@@ -25,11 +25,11 @@ class MainImageCoordinator {
 
 extension MainImageCoordinator {
     
-    func showLargeImage(models: [MainImageModel], animated: Bool) {
+    func showLargeImage(model: MainImageModel, animated: Bool) {
         let viewModel = MainImageViewModel(
             coordinator: self,
             configurator: configurator,
-            models: models)
+            model: model)
         let viewController = MainImageViewController(viewModel: viewModel)
         navigationController.pushViewController(
             viewController,
@@ -40,9 +40,4 @@ extension MainImageCoordinator {
 
 // MARK: - Navigation OUT
 
-extension MainImageCoordinator {
-
-    func dismissSomething(animated: Bool) {
-        
-    }
-}
+extension MainImageCoordinator {}

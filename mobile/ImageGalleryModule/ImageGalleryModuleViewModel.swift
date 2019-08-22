@@ -50,12 +50,9 @@ extension ImageGalleryModuleViewModel {
                 case .showImages:
                     self.showImages()
                 case .selectedIndex(let index):
-                    guard let model = self.modelForIndex(index: index) else {
-                        assertionFailure("model is nil")
-                        return
-                    }
                     self.coordinator.showLargeImage(
-                        imageGalleryModel: model,
+                        imageGalleryModels: self.models,
+                        selectedIndex: index,
                         animted: true
                     )
                 }

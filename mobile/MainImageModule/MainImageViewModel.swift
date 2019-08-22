@@ -17,17 +17,17 @@ class MainImageViewModel {
     private let disposeBag = DisposeBag()
     
     // MARK: - Properties
-    let models: [MainImageModel]
+    let model: MainImageModel
 
     // MARK: - Life cycle
     
     init(coordinator: MainImageCoordinator,
          configurator: MainImageConfigurator,
-         models: [MainImageModel]
+         model: MainImageModel
         ) {
         self.coordinator = coordinator
         self.useCase = MainImageUseCase(interactor: configurator.mainImageInteractor)
-        self.models = models
+        self.model = model
         observeViewEffect()
     }
 }
@@ -35,15 +35,14 @@ class MainImageViewModel {
 // MARK: - Public functions
 
 extension MainImageViewModel {
-    
+
     var numberOfModels: Int {
-        return models.count
+        return model.models.count
     }
     
-    func modelForIndex(index: Int) -> MainImageModel? {
-        return models[safe: index]
+    func modelForIndex(index: Int) -> MainImageModel.ImageModel? {
+        return model.models[safe: index]
     }
-    
     
     func bind(to viewAction: PublishRelay<MainImageViewAction>) {
         viewAction

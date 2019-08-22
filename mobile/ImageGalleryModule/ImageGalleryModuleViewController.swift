@@ -52,6 +52,7 @@ private extension ImageGalleryModuleViewController {
 
     /// Initializes and configures components in controller.
     func setUpViews() {
+        title = "mobile" //TODO: Put in constants
         view.backgroundColor = .white
         view.addSubview(collectionView)
         

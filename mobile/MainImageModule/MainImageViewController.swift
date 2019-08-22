@@ -22,6 +22,7 @@ class MainImageViewController: UIViewController {
     init(viewModel: MainImageViewModel) {
         self.viewModel = viewModel
         let collectionViewLayout = UICollectionViewFlowLayout()
+        collectionViewLayout.scrollDirection = .horizontal
         collectionView = UICollectionView(
             frame: .zero,
             collectionViewLayout: collectionViewLayout
@@ -53,6 +54,7 @@ private extension MainImageViewController {
 
     /// Initializes and configures components in controller.
     func setUpViews() {
+        title = "Detail" //TODO: Put in Localized strings
         view.addSubview(collectionView)
         
         collectionView.autoPinEdgesToSuperviewEdges()
