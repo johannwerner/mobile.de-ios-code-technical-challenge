@@ -40,6 +40,10 @@ extension MainImageViewModel {
         return model.models.count
     }
     
+    var selectedIndex: Int {
+        return model.selectedIndex
+    }
+    
     func modelForIndex(index: Int) -> MainImageModel.ImageModel? {
         return model.models[safe: index]
     }

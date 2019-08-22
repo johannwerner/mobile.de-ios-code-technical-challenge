@@ -29,6 +29,20 @@ class MainImageViewController: UIViewController {
         )
         super.init(nibName: nil, bundle: nil)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let selectedIndexPath = IndexPath(
+            item: viewModel.selectedIndex,
+            section: 0
+        )
+        collectionView.scrollToItem(
+            at: selectedIndexPath,
+            at: .centeredHorizontally,
+            animated: true
+        )
+    }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
