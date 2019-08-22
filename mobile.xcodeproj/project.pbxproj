@@ -168,12 +168,12 @@
 			isa = PBXGroup;
 			children = (
 				93586C8C230D3B6600E4E218 /* ImageGalleryCollectionViewCell */,
-				93586C8B230D3AF400E4E218 /* Module */,
-				934082CE230AE9A00073A6FD /* ImageGalleryModuleUseCase.swift */,
+				93586C8B230D3AF400E4E218 /* Model */,
 				934082CF230AE9A00073A6FD /* ImageGalleryModuleViewController.swift */,
-				934082D0230AE9A00073A6FD /* ImageGalleryModuleInteractor.swift */,
-				934082D1230AE9A00073A6FD /* ImageGalleryModuleModel.swift */,
 				934082D3230AE9A00073A6FD /* ImageGalleryModuleViewModel.swift */,
+				934082D1230AE9A00073A6FD /* ImageGalleryModuleModel.swift */,
+				934082CE230AE9A00073A6FD /* ImageGalleryModuleUseCase.swift */,
+				934082D0230AE9A00073A6FD /* ImageGalleryModuleInteractor.swift */,
 				934082D2230AE9A00073A6FD /* ImageGalleryModuleInteractorApi.swift */,
 				934082D4230AE9A00073A6FD /* ImageGalleryModuleConfigurator.swift */,
 				934082CD230AE9A00073A6FD /* ImageGalleryModuleCoordinator.swift */,
@@ -203,12 +203,12 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
-		93586C8B230D3AF400E4E218 /* Module */ = {
+		93586C8B230D3AF400E4E218 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				934082E9230AF0270073A6FD /* ImageGalleryModel.swift */,
 			);
-			path = Module;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		93586C8C230D3B6600E4E218 /* ImageGalleryCollectionViewCell */ = {

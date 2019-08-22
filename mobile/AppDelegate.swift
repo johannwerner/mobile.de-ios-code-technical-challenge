@@ -16,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let navigationController = UINavigationController()
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.makeKeyAndVisible()
+        window.rootViewController = navigationController
+        self.window = window
+        
+        let configurator = ImageGalleryModuleConfigurator(imageGalleryModuleInteractor: ImageGalleryModuleInteractorApi())
+        let coordinator = ImageGalleryModuleCoordinator(navigationController: navigationController, configurator: configurator)
+        coordinator.showImageGallery(animated: true)
         return true
     }
 

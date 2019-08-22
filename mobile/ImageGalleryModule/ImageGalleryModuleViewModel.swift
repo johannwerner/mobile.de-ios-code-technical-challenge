@@ -6,6 +6,10 @@ import RxSwift
 /// - Note: A view model can refer to one or more use cases.
 class ImageGalleryModuleViewModel {
 
+    // MARK: - Properties
+    private var models: [ImageGalleryModel]  = []
+    
+    // MARK: - View Effect
     let viewEffect = PublishRelay<ImageGalleryModuleViewEffect>()
     
     // MARK: Dependencies
@@ -30,13 +34,30 @@ class ImageGalleryModuleViewModel {
 
 extension ImageGalleryModuleViewModel {
     
+    var numberOfModels: Int {
+        return models.count
+    }
+    
+    func modelForIndex(index: Int) -> ImageGalleryModel? {
+        return models[safe: index]
+    }
+    
     func bind(to viewAction: PublishRelay<ImageGalleryModuleViewAction>) {
         viewAction
             .asObservable()
             .subscribe(onNext: { [unowned self] viewAction in
                 switch viewAction {
-                case .someAction:
-                    self.doSomething()
+                case .showImages:
+                    self.showImages()
+                case .selectedIndex(let index):
+                    guard let model = self.modelForIndex(index: index) else {
+                        assertionFailure("model is nil")
+                        return
+                    }
+                    self.coordinator.showLargeImage(
+                        imageGalleryModel: model,
+                        animted: true
+                    )
                 }
             })
             .disposed(by: disposeBag)
@@ -47,12 +68,15 @@ extension ImageGalleryModuleViewModel {
 
 private extension ImageGalleryModuleViewModel {
     
-    func doSomething() {
-        self.useCase.verifySomething("")
+    func showImages() {
+        self.useCase.fetchImages()
             .subscribe(onNext: { [unowned self] status in
                 switch status {
                 case .someStatus:
-                    self.viewEffect.accept(.someEffect)
+                    break
+                case .success(let listOfModels):
+                    self.models = listOfModels
+                    self.viewEffect.accept(.showImages)
                 }
             })
             .disposed(by: disposeBag)
@@ -64,12 +88,12 @@ private extension ImageGalleryModuleViewModel {
 private extension ImageGalleryModuleViewModel {
     
     /// - Note: Privately observing view effects in the view model is meant to make the association between a specific effect and certain view states easier.
-    private func observeViewEffect() {
+    func observeViewEffect() {
         viewEffect
             .asObservable()
             .subscribe(onNext: { [unowned self] effect in
                 switch effect {
-                case .someEffect:
+                case .showImages:
                     break
                 }
             })

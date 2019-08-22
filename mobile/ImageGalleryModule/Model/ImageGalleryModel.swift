@@ -15,7 +15,7 @@ struct ImageGalleryModel: Codable {
 //        return uri.appending("_2.jpg")
     }
     var bigImageUrl: String {
-        return "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg"
+        return "https://designerdoginfo.files.wordpress.com/2012/04/puppy-and-adult-dog.jpg"
 //        return uri.appending("_27.jpg")
     }
 }

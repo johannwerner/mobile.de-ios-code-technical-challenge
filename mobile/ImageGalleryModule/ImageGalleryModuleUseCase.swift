@@ -18,18 +18,24 @@ class ImageGalleryModuleUseCase {
 
 extension ImageGalleryModuleUseCase {
     
-    func verifySomething(_ someInput: String) -> Observable<ImageGalleryModuleStatus> {
+    func fetchImages() -> Observable<ImageGalleryModuleStatus> {
         return self.interactor.fetchImages()
             .map { (result: Async<Any>) -> ImageGalleryModuleStatus in
                 switch result {
                 case .loading:
-                    break
-                case .success:
                     return .someStatus
+                case .success(let data):
+                    guard let listOfArray = data as? Array<Dictionary<String, Any>> else {
+                        return .someStatus
+                    }
+                    let listOfModels = listOfArray.compactMap({ dictionary -> ImageGalleryModel? in
+                        let imageGalleryModel = ImageGalleryModel.parse(from: dictionary)
+                        return imageGalleryModel
+                    })
+                    return .success(listOfModels)
                 case let .error(error):
-                    break
+                    return .someStatus
                 }
-                fatalError()
         }
     }
 }

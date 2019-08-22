@@ -34,4 +34,8 @@ extension ImageGalleryModuleCoordinator {
 
 // MARK: - Navigation OUT
 
-extension ImageGalleryModuleCoordinator {}
+extension ImageGalleryModuleCoordinator {
+    func showLargeImage(imageGalleryModel: ImageGalleryModel, animted: Bool) {
+        
+    }
+}

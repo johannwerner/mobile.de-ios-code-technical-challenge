@@ -12,7 +12,7 @@ class ImageGalleryModuleViewController: UIViewController {
     private let viewAction = PublishRelay<ImageGalleryModuleViewAction>()
     
     // MARK: View components
-    private let someButton = UIButton()
+    private let showImagesButton = UIButton()
     private let collectionView: UICollectionView
     
     // MARK: Tooling
@@ -22,7 +22,12 @@ class ImageGalleryModuleViewController: UIViewController {
     
     init(viewModel: ImageGalleryModuleViewModel) {
         self.viewModel = viewModel
-        let collectionViewLayout = UICollectionViewLayout()
+        let collectionViewLayout = UICollectionViewFlowLayout()
+//        collectionViewLayout.scrollDirection = .vertical //.horizontal
+//        collectionViewLayout.itemSize = CGSize(width: 200, height: 200)
+//        collectionViewLayout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+//        collectionViewLayout.minimumLineSpacing = 1.0
+//        collectionViewLayout.minimumInteritemSpacing = 1.0
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         super.init(nibName: nil, bundle: nil)
     }
@@ -52,7 +57,25 @@ private extension ImageGalleryModuleViewController {
 
     /// Initializes and configures components in controller.
     func setUpViews() {
+        view.backgroundColor = .white
+        view.addSubview(collectionView)
         
+        
+        collectionView.autoPinEdgesToSuperviewEdges()
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(ImageGalleryCollectionViewCell.self, forCellWithReuseIdentifier: ImageGalleryCollectionViewCell.className)
+        collectionView.isHidden = true
+        
+        view.addSubview(showImagesButton)
+        showImagesButton.autoCenterInSuperview()
+        showImagesButton.autoSetDimensions(to: CGSize(width: 150, height: 100))
+        showImagesButton.setTitleColor(.blue, for: .normal)
+        showImagesButton.setTitle("Show Images", for: .normal) //TODO: localize here
+        
+        showImagesButton.rx.tap.subscribe(onNext: { [unowned self] in
+            self.viewAction.accept(.showImages)
+        }).disposed(by: disposeBag)
     }
     
     /// Binds controller user events to view model.
@@ -71,10 +94,48 @@ private extension ImageGalleryModuleViewController {
             .viewEffect
             .subscribe(onNext: { [unowned self] effect in
                 switch effect {
-                case .someEffect:
-                    break
+                case .showImages:
+                    self.collectionView.reloadData()
+                    self.collectionView.isHidden = false
+                    self.showImagesButton.isHidden = true
                 }
             })
             .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - CollectionView
+extension ImageGalleryModuleViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.numberOfModels
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageGalleryCollectionViewCell.className, for: indexPath)
+        guard let model = viewModel.modelForIndex(index: indexPath.row) else {
+            assertionFailure("model is nil")
+            return cell
+        }
+        guard let imageGalleryCell = cell as? ImageGalleryCollectionViewCell else {
+            assertionFailure("cell is not type imageGalleryCell")
+            return cell
+        }
+        imageGalleryCell.fill(with: model)
+        return imageGalleryCell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewAction.accept(.selectedIndex(indexPath.row))
+    }
+}
+
+extension ImageGalleryModuleViewController: UICollectionViewDelegateFlowLayout  {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = CGSize(
+            width: collectionView.frame.size.width / 3,
+            height: 200
+        )
+        return size
     }
 }

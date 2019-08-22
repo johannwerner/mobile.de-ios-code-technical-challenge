@@ -1,16 +1,18 @@
 /// Operation status enum for ImageGalleryModule.
 enum ImageGalleryModuleStatus {
     case someStatus
+    case success([ImageGalleryModel])
 }
 
 /// View effect enum for ImageGalleryModule.
 enum ImageGalleryModuleViewEffect {
-    case someEffect
+    case showImages
 }
 
 /// View action enum for ImageGalleryModule.
 enum ImageGalleryModuleViewAction {
-    case someAction
+    case showImages
+    case selectedIndex(Int)
 }
 
 struct ImageGalleryConstants {
