@@ -15,7 +15,10 @@ class MainImageCoordinator {
 
     // MARK: - Life cycle
     
-    init(navigationController: UINavigationController, configurator: MainImageConfigurator) {
+    init(
+        navigationController: UINavigationController,
+        configurator: MainImageConfigurator
+        ) {
         self.navigationController = navigationController
         self.configurator = configurator
     }

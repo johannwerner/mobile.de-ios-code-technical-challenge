@@ -5,7 +5,6 @@ import RxSwift
 class MainImageInteractorApi: MainImageInteractor {
     
     // MARK: Dependencies
-
     
     // MARK: - Life cycle
 

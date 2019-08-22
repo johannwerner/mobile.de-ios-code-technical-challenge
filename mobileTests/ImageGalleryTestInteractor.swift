@@ -5,7 +5,6 @@ final class ImageGalleryTestInteractor: ImageGalleryModuleInteractor {
 
     // MARK: Dependencies
     
-    
     // MARK: - Life cycle
 }
 
@@ -20,6 +19,4 @@ extension ImageGalleryTestInteractor {
         return Observable.just([dictionary]).async()
 
     }
-//    func getListOfCarsForLocation(location: String) -> Observable<Async<Any>> {
-//    }
 }
