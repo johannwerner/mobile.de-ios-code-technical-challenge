@@ -28,7 +28,8 @@ extension ImageGalleryModuleUseCase {
                     guard let imageData = data as? Dictionary<String, Any> else {
                         return.error
                     }
-                    guard let listOfArray = imageData["images"] as? Array<Dictionary<String, Any>> else {
+                    let keyValue = ImageGalleryConstants.imagesKeyValue
+                    guard let listOfArray = imageData[keyValue] as? Array<Dictionary<String, Any>> else {
                         return .error
                     }
                     let listOfModels = listOfArray.compactMap({ dictionary -> ImageGalleryModel? in
