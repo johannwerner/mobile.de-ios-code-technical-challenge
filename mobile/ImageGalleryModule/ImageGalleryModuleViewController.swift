@@ -23,11 +23,6 @@ class ImageGalleryModuleViewController: UIViewController {
     init(viewModel: ImageGalleryModuleViewModel) {
         self.viewModel = viewModel
         let collectionViewLayout = UICollectionViewFlowLayout()
-//        collectionViewLayout.scrollDirection = .vertical //.horizontal
-//        collectionViewLayout.itemSize = CGSize(width: 200, height: 200)
-//        collectionViewLayout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
-//        collectionViewLayout.minimumLineSpacing = 1.0
-//        collectionViewLayout.minimumInteritemSpacing = 1.0
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         super.init(nibName: nil, bundle: nil)
     }

@@ -24,7 +24,7 @@ class ImageGalleryModuleViewModel {
     init(coordinator: ImageGalleryModuleCoordinator,
          configurator: ImageGalleryModuleConfigurator) {
         self.coordinator = coordinator
-        self.useCase = ImageGalleryModuleUseCase(interactor: ImageGalleryModuleInteractorApi())
+        self.useCase = ImageGalleryModuleUseCase(interactor: configurator.imageGalleryModuleInteractor)
         
         observeViewEffect()
     }
