@@ -11,11 +11,13 @@ extension UIImageView {
     ///   - priority: priority of download image
     ///   - placeholderImage: placeholder when image could not be loaded
     ///   - completed: (UIImage, Error) completion block
-    func setRemoteImage(with urlString: String?,
+    
+    
+    func setRemoteImage(with urlString: String,
                         priority: Float = URLSessionTask.defaultPriority,
                         placeholderImage: UIImage? = nil,
                         completed: LoadImageCompletion? = nil) {
-        let url = URL(string: urlString ?? "")
+        let url = URL(string: urlString)
         setRemoteImage(url: url, priority: priority, placeholderImage: placeholderImage, completed: completed)
     }
     

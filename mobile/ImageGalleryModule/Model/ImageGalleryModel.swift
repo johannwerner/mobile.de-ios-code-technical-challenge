@@ -12,12 +12,10 @@ struct ImageGalleryModel: Codable, ImageCollectionProtocol {
     
     var uri: String
     var smallImageUrl: String {
-        return uri
-//        return uri.appending("_2.jpg")
+        return "http://\(uri)_2.jpg"
     }
     var bigImageUrl: String {
-        return uri
-//        return uri.appending("_27.jpg")
+        return "http://\(uri)_27.jpg"
     }
     
     var imageUrlToShow: String {

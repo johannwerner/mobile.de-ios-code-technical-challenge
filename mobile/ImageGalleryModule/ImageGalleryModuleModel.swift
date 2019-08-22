@@ -17,5 +17,5 @@ enum ImageGalleryModuleViewAction {
 }
 
 struct ImageGalleryConstants {
-    static var url: String = "https://m.mobile.de/svc/a/268670031"
+    static var url: String = "https://m.mobile.de/svc/a/281794529"
 }
