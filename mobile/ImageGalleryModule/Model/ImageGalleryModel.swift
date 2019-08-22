@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ImageGalleryModel: Codable, ImageCollectionViewModel {
+struct ImageGalleryModel: Codable, ImageCollectionProtocol {
     
     var uri: String
     var smallImageUrl: String {

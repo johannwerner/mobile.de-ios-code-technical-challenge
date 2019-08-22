@@ -19,7 +19,7 @@ struct MainImageModel {
     var models: [ImageModel]
 
     
-    struct ImageModel: ImageCollectionViewModel {
+    struct ImageModel: ImageCollectionProtocol {
         var bigImageUrl: String
         
         var imageUrlToShow: String {

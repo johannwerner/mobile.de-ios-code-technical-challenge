@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol ImageCollectionViewModel {
+protocol ImageCollectionProtocol {
     var imageUrlToShow: String { get }
 }
