@@ -64,7 +64,7 @@ private extension ImageGalleryModuleViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(MainImageCollectionViewCell.self, forCellWithReuseIdentifier: MainImageCollectionViewCell.className)
-        collectionView.isHidden = true
+        collectionView.alpha = 0
         
         view.addSubview(showImagesButton)
         showImagesButton.autoCenterInSuperview()
@@ -95,8 +95,10 @@ private extension ImageGalleryModuleViewController {
                 switch effect {
                 case .showImages:
                     self.collectionView.reloadData()
-                    self.collectionView.isHidden = false
                     self.showImagesButton.isHidden = true
+                    UIView.animate(withDuration: 0.4, animations: { [weak self]  in
+                        self?.collectionView.alpha = 1.0
+                    })
                 }
             })
             .disposed(by: disposeBag)
