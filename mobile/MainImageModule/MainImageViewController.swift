@@ -57,9 +57,13 @@ private extension MainImageViewController {
         title = "Detail" //TODO: Put in Localized strings
         view.addSubview(collectionView)
         
-        collectionView.autoPinEdgesToSuperviewEdges()
+        collectionView.autoPinEdge(toSuperviewEdge: .leading)
+        collectionView.autoPinEdge(toSuperviewEdge: .trailing)
+        collectionView.autoAlignAxis(toSuperviewAxis: .horizontal)
+        collectionView.autoSetDimension(.height, toSize: 400)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.isPagingEnabled = true
         collectionView.register(MainImageCollectionViewCell.self, forCellWithReuseIdentifier: MainImageCollectionViewCell.className)
     }
     
@@ -112,7 +116,7 @@ extension MainImageViewController: UICollectionViewDelegateFlowLayout  {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = CGSize(
-            width: collectionView.frame.size.width,
+            width: collectionView.frame.size.width - 10,
             height: collectionView.frame.size.height
         )
         return size

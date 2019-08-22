@@ -1,15 +1,15 @@
 //
-//  ImageGalleryCollectionViewCell.swift
+//  MainImageCollectionViewCell.swift
 //  mobile
 //
-//  Created by Johann Werner on 21.08.19.
+//  Created by Johann Werner on 22.08.19.
 //  Copyright © 2019 Johann Werner. All rights reserved.
 //
 
 import UIKit
 import PureLayout
 
-class ImageGalleryCollectionViewCell: UICollectionViewCell {
+class MainImageCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     private let imageView = UIImageView()
     // MARK: - Life Cycle
@@ -23,18 +23,21 @@ class ImageGalleryCollectionViewCell: UICollectionViewCell {
     }
 }
 
+
 // MARK: - Public
-extension ImageGalleryCollectionViewCell {
-    func fill(with model: ImageGalleryModel) {
-        imageView.setRemoteImage(with: model.smallImageUrl)
+extension MainImageCollectionViewCell {
+    func fill(with model: ImageCollectionViewModel) {
+        imageView.setRemoteImage(with: model.imageUrlToShow)
     }
 }
 
 // MARK: - Private
-private extension ImageGalleryCollectionViewCell {
+private extension MainImageCollectionViewCell {
     func initUI() {
         contentView.addSubview(imageView)
         imageView.autoPinEdgesToSuperviewEdges()
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
     }
 }
+

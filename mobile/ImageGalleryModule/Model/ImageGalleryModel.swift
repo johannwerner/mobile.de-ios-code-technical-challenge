@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct ImageGalleryModel: Codable {
+struct ImageGalleryModel: Codable, ImageCollectionViewModel {
+    
     var uri: String
     var smallImageUrl: String {
         return "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/SB_8277397.jpg/150px-SB_8277397.jpg"
@@ -17,5 +18,9 @@ struct ImageGalleryModel: Codable {
     var bigImageUrl: String {
         return "https://designerdoginfo.files.wordpress.com/2012/04/puppy-and-adult-dog.jpg"
 //        return uri.appending("_27.jpg")
+    }
+    
+    var imageUrlToShow: String {
+        return smallImageUrl
     }
 }

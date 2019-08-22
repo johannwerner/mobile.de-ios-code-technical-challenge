@@ -1,5 +1,6 @@
 import RxSwift
 import RxCocoa
+import PureLayout
 
 /// <#Brief description of the purpose of the view controller#>
 /// - Requires: `RxSwift`
@@ -60,7 +61,7 @@ private extension ImageGalleryModuleViewController {
         collectionView.autoPinEdgesToSuperviewEdges()
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(ImageGalleryCollectionViewCell.self, forCellWithReuseIdentifier: ImageGalleryCollectionViewCell.className)
+        collectionView.register(MainImageCollectionViewCell.self, forCellWithReuseIdentifier: MainImageCollectionViewCell.className)
         collectionView.isHidden = true
         
         view.addSubview(showImagesButton)
@@ -107,12 +108,12 @@ extension ImageGalleryModuleViewController: UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageGalleryCollectionViewCell.className, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainImageCollectionViewCell.className, for: indexPath)
         guard let model = viewModel.modelForIndex(index: indexPath.row) else {
             assertionFailure("model is nil")
             return cell
         }
-        guard let imageGalleryCell = cell as? ImageGalleryCollectionViewCell else {
+        guard let imageGalleryCell = cell as? MainImageCollectionViewCell else {
             assertionFailure("cell is not type imageGalleryCell")
             return cell
         }

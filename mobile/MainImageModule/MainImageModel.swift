@@ -26,12 +26,17 @@ enum MainImageViewAction {
 }
 
 struct MainImageModel {
+
     var selectedIndex: Int
     var models: [ImageModel]
 
     
-    struct ImageModel {
+    struct ImageModel: ImageCollectionViewModel {
         var bigImageUrl: String
+        
+        var imageUrlToShow: String {
+            return bigImageUrl
+        }
     }
     
     var selectedModel: MainImageModel.ImageModel? {
