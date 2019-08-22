@@ -32,7 +32,7 @@ class MainImageViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        collectionView.isHidden = false
         let selectedIndexPath = IndexPath(
             item: viewModel.selectedIndex,
             section: 0
@@ -79,6 +79,8 @@ private extension MainImageViewController {
         collectionView.delegate = self
         collectionView.isPagingEnabled = true
         collectionView.register(MainImageCollectionViewCell.self, forCellWithReuseIdentifier: MainImageCollectionViewCell.className)
+        
+        collectionView.isHidden = true
     }
     
     /// Binds controller user events to view model.

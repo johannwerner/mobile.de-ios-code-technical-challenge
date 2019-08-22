@@ -12,11 +12,11 @@ struct ImageGalleryModel: Codable, ImageCollectionProtocol {
     
     var uri: String
     var smallImageUrl: String {
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/SB_8277397.jpg/150px-SB_8277397.jpg"
+        return uri
 //        return uri.appending("_2.jpg")
     }
     var bigImageUrl: String {
-        return "https://designerdoginfo.files.wordpress.com/2012/04/puppy-and-adult-dog.jpg"
+        return uri
 //        return uri.appending("_27.jpg")
     }
     

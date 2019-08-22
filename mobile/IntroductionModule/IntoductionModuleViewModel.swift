@@ -39,7 +39,7 @@ extension  IntroductionModuleViewModel {
             .subscribe(onNext: { [unowned self] viewAction in
                 switch viewAction {
                 case .primaryButtonPressed:
-                    self.showLocationView()
+                    self.showNextView()
                 }
             })
             .disposed(by: disposeBag)
@@ -49,7 +49,7 @@ extension  IntroductionModuleViewModel {
 // MARK: - Private functions
 
 private extension  IntroductionModuleViewModel {
-    func showLocationView() {
+    func showNextView() {
         coordinator.showImageGallery(animated: true)
     }
 }
