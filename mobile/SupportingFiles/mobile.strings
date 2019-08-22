@@ -1,0 +1,11 @@
+/* 
+  mobile.strings
+  mobile
+
+  Created by Johann Werner on 22.08.19.
+  Copyright © 2019 Johann Werner. All rights reserved.
+*/
+
+"image_gallery_primary_button" = "Show Images";
+
+"main_image_title" = "Detail";

@@ -9,9 +9,9 @@
 import Foundation
 
 extension String {
-    ///tableName is nil,
+    ///tableName is mobile,
     ///missing string will be displayed when no value exists.
     func localizedString(_ comment: String = "") -> String {
-        return NSLocalizedString(self, tableName: nil, value: "missing string", comment: comment)
+        return NSLocalizedString(self, tableName: "mobile", value: "missing string", comment: comment)
     }
 }

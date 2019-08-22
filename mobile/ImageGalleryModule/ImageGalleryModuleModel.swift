@@ -1,6 +1,7 @@
 /// Operation status enum for ImageGalleryModule.
 enum ImageGalleryModuleStatus {
-    case someStatus
+    case error
+    case loading
     case success([ImageGalleryModel])
 }
 

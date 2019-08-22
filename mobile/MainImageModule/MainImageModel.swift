@@ -1,18 +1,6 @@
-/// View state structure for MainImage.
-struct MainImageViewState: Equatable {
-    
-    var isSomeButtonHidden: Bool
-    
-    static var initial: MainImageViewState {
-        return MainImageViewState(
-            isSomeButtonHidden: true
-        )
-    }
-}
-
 /// Operation status enum for MainImage.
 enum MainImageStatus {
-    case someStatus
+    case loading
 }
 
 /// View effect enum for MainImage.

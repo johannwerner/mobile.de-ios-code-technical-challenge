@@ -54,7 +54,7 @@ private extension MainImageViewController {
 
     /// Initializes and configures components in controller.
     func setUpViews() {
-        title = "Detail" //TODO: Put in Localized strings
+        title = "main_image_title".localizedString()
         view.addSubview(collectionView)
         
         collectionView.autoPinEdge(toSuperviewEdge: .leading)

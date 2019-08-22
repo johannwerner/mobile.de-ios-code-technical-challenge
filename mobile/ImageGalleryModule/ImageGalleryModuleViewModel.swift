@@ -69,11 +69,13 @@ private extension ImageGalleryModuleViewModel {
         self.useCase.fetchImages()
             .subscribe(onNext: { [unowned self] status in
                 switch status {
-                case .someStatus:
-                    break
                 case .success(let listOfModels):
                     self.models = listOfModels
                     self.viewEffect.accept(.showImages)
+                case .error:
+                    break
+                case .loading:
+                    break
                 }
             })
             .disposed(by: disposeBag)

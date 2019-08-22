@@ -24,6 +24,8 @@ class ImageGalleryModuleViewController: UIViewController {
     init(viewModel: ImageGalleryModuleViewModel) {
         self.viewModel = viewModel
         let collectionViewLayout = UICollectionViewFlowLayout()
+        collectionViewLayout.minimumInteritemSpacing = 0
+        collectionViewLayout.minimumLineSpacing = 0
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         super.init(nibName: nil, bundle: nil)
     }
@@ -53,7 +55,7 @@ private extension ImageGalleryModuleViewController {
 
     /// Initializes and configures components in controller.
     func setUpViews() {
-        title = "mobile" //TODO: Put in constants
+        title = AppConstants.appName
         view.backgroundColor = .white
         view.addSubview(collectionView)
         
@@ -68,7 +70,7 @@ private extension ImageGalleryModuleViewController {
         showImagesButton.autoCenterInSuperview()
         showImagesButton.autoSetDimensions(to: CGSize(width: 150, height: 100))
         showImagesButton.setTitleColor(.blue, for: .normal)
-        showImagesButton.setTitle("Show Images", for: .normal) //TODO: localize here
+        showImagesButton.setTitle("image_gallery_primary_button".localizedString(), for: .normal)
         
         showImagesButton.rx.tap.subscribe(onNext: { [unowned self] in
             self.viewAction.accept(.showImages)

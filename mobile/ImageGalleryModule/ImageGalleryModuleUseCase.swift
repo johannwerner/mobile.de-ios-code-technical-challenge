@@ -23,10 +23,10 @@ extension ImageGalleryModuleUseCase {
             .map { (result: Async<Any>) -> ImageGalleryModuleStatus in
                 switch result {
                 case .loading:
-                    return .someStatus
+                    return .loading
                 case .success(let data):
                     guard let listOfArray = data as? Array<Dictionary<String, Any>> else {
-                        return .someStatus
+                        return .error
                     }
                     let listOfModels = listOfArray.compactMap({ dictionary -> ImageGalleryModel? in
                         let imageGalleryModel = ImageGalleryModel.parse(from: dictionary)
@@ -34,7 +34,7 @@ extension ImageGalleryModuleUseCase {
                     })
                     return .success(listOfModels)
                 case let .error(error):
-                    return .someStatus
+                    return .error
                 }
         }
     }

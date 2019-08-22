@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		3888FF41499E6599E55FB3E8 /* Pods_mobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C643EF69DA2B4F2ED6DF9218 /* Pods_mobileTests.framework */; };
 		934082AD230AE4D80073A6FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934082AC230AE4D80073A6FD /* AppDelegate.swift */; };
-		934082AF230AE4D80073A6FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934082AE230AE4D80073A6FD /* ViewController.swift */; };
-		934082B2230AE4D80073A6FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 934082B0230AE4D80073A6FD /* Main.storyboard */; };
 		934082B4230AE4DA0073A6FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 934082B3230AE4DA0073A6FD /* Assets.xcassets */; };
 		934082B7230AE4DA0073A6FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 934082B5230AE4DA0073A6FD /* LaunchScreen.storyboard */; };
 		934082C2230AE4DA0073A6FD /* mobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934082C1230AE4DA0073A6FD /* mobileTests.swift */; };
@@ -40,6 +38,8 @@
 		93586CA1230E8AE500E4E218 /* MainImageConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586C99230E8AE500E4E218 /* MainImageConfigurator.swift */; };
 		93586CA5230E92D300E4E218 /* MainImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CA4230E92D300E4E218 /* MainImageCollectionViewCell.swift */; };
 		93586CA8230EC7C200E4E218 /* ImageCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CA7230EC7C200E4E218 /* ImageCollectionViewModel.swift */; };
+		93586CAB230ECD7000E4E218 /* mobile.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93586CAA230ECD7000E4E218 /* mobile.strings */; };
+		93586CAD230ECDAD00E4E218 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CAC230ECDAD00E4E218 /* AppConstants.swift */; };
 		C0CCB50BA5FAC381FBD8D715 /* Pods_mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC41C88221540D61F7F80DA0 /* Pods_mobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,8 +58,6 @@
 		4F5B485BF357DBA74A78C196 /* Pods-mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobile.debug.xcconfig"; path = "Target Support Files/Pods-mobile/Pods-mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		934082A9230AE4D80073A6FD /* mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		934082AC230AE4D80073A6FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		934082AE230AE4D80073A6FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		934082B1230AE4D80073A6FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		934082B3230AE4DA0073A6FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		934082B6230AE4DA0073A6FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		934082B8230AE4DA0073A6FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,6 +90,8 @@
 		93586C99230E8AE500E4E218 /* MainImageConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainImageConfigurator.swift; sourceTree = "<group>"; };
 		93586CA4230E92D300E4E218 /* MainImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		93586CA7230EC7C200E4E218 /* ImageCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewModel.swift; sourceTree = "<group>"; };
+		93586CAA230ECD7000E4E218 /* mobile.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = mobile.strings; sourceTree = "<group>"; };
+		93586CAC230ECDAD00E4E218 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		9B9A5531CD37C346273EA6E9 /* Pods-mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobile.release.xcconfig"; path = "Target Support Files/Pods-mobile/Pods-mobile.release.xcconfig"; sourceTree = "<group>"; };
 		BE44E8C14037ACBE69E721AD /* Pods-mobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileTests.debug.xcconfig"; path = "Target Support Files/Pods-mobileTests/Pods-mobileTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C643EF69DA2B4F2ED6DF9218 /* Pods_mobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,15 +161,9 @@
 		934082AB230AE4D80073A6FD /* mobile */ = {
 			isa = PBXGroup;
 			children = (
-				934082AC230AE4D80073A6FD /* AppDelegate.swift */,
-				934082DD230AEA9D0073A6FD /* SupportingFiles */,
 				934082CC230AE9830073A6FD /* ImageGalleryModule */,
 				93586C91230E8AAC00E4E218 /* MainImageModule */,
-				934082AE230AE4D80073A6FD /* ViewController.swift */,
-				934082B0230AE4D80073A6FD /* Main.storyboard */,
-				934082B3230AE4DA0073A6FD /* Assets.xcassets */,
-				934082B5230AE4DA0073A6FD /* LaunchScreen.storyboard */,
-				934082B8230AE4DA0073A6FD /* Info.plist */,
+				934082DD230AEA9D0073A6FD /* SupportingFiles */,
 			);
 			path = mobile;
 			sourceTree = "<group>";
@@ -202,13 +196,19 @@
 		934082DD230AEA9D0073A6FD /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				93586CA9230EC9F100E4E218 /* SharedViews */,
+				934082DE230AEAAF0073A6FD /* Foundation */,
 				93586CA6230EC7B300E4E218 /* SharedProtocol */,
+				93586CA9230EC9F100E4E218 /* SharedViews */,
+				934082AC230AE4D80073A6FD /* AppDelegate.swift */,
 				93586C8F230D414A00E4E218 /* UIImageView+Network.swift */,
 				934082E3230AEAAF0073A6FD /* Async.swift */,
-				934082DE230AEAAF0073A6FD /* Foundation */,
 				934082E2230AEAAF0073A6FD /* NSObject+Mobile.swift */,
 				934082EB230AF2630073A6FD /* ObservableType.swift */,
+				934082B3230AE4DA0073A6FD /* Assets.xcassets */,
+				934082B5230AE4DA0073A6FD /* LaunchScreen.storyboard */,
+				934082B8230AE4DA0073A6FD /* Info.plist */,
+				93586CAA230ECD7000E4E218 /* mobile.strings */,
+				93586CAC230ECDAD00E4E218 /* AppConstants.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -356,7 +356,7 @@
 			files = (
 				934082B7230AE4DA0073A6FD /* LaunchScreen.storyboard in Resources */,
 				934082B4230AE4DA0073A6FD /* Assets.xcassets in Resources */,
-				934082B2230AE4D80073A6FD /* Main.storyboard in Resources */,
+				93586CAB230ECD7000E4E218 /* mobile.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,7 +440,6 @@
 			files = (
 				934082EC230AF2630073A6FD /* ObservableType.swift in Sources */,
 				934082D6230AE9A00073A6FD /* ImageGalleryModuleUseCase.swift in Sources */,
-				934082AF230AE4D80073A6FD /* ViewController.swift in Sources */,
 				934082AD230AE4D80073A6FD /* AppDelegate.swift in Sources */,
 				934082D5230AE9A00073A6FD /* ImageGalleryModuleCoordinator.swift in Sources */,
 				93586CA8230EC7C200E4E218 /* ImageCollectionViewModel.swift in Sources */,
@@ -450,6 +449,7 @@
 				93586CA0230E8AE500E4E218 /* MainImageViewModel.swift in Sources */,
 				934082EA230AF0270073A6FD /* ImageGalleryModel.swift in Sources */,
 				934082DB230AE9A00073A6FD /* ImageGalleryModuleViewModel.swift in Sources */,
+				93586CAD230ECDAD00E4E218 /* AppConstants.swift in Sources */,
 				93586C9A230E8AE500E4E218 /* MainImageCoordinator.swift in Sources */,
 				934082E5230AEAAF0073A6FD /* String+Mobile.swift in Sources */,
 				934082E6230AEAAF0073A6FD /* Array+Mobile.swift in Sources */,
@@ -488,14 +488,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		934082B0230AE4D80073A6FD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				934082B1230AE4D80073A6FD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		934082B5230AE4DA0073A6FD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -629,7 +621,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = mobile/Info.plist;
+				INFOPLIST_FILE = mobile/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -647,7 +639,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = mobile/Info.plist;
+				INFOPLIST_FILE = mobile/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
