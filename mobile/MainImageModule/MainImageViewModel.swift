@@ -51,7 +51,7 @@ extension MainImageViewModel {
     func bind(to viewAction: PublishRelay<MainImageViewAction>) {
         viewAction
             .asObservable()
-            .subscribe(onNext: { [unowned self] viewAction in
+            .subscribe(onNext: { viewAction in
                 switch viewAction {
                 case .someAction:
                     break
@@ -73,7 +73,7 @@ private extension MainImageViewModel {
     private func observeViewEffect() {
         viewEffect
             .asObservable()
-            .subscribe(onNext: { [unowned self] effect in
+            .subscribe(onNext: { effect in
                 switch effect {
                 case .someEffect:
                     break

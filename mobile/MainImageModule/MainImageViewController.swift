@@ -97,7 +97,7 @@ private extension MainImageViewController {
     func observeViewEffect() {
         viewModel
             .viewEffect
-            .subscribe(onNext: { [unowned self] effect in
+            .subscribe(onNext: { effect in
                 switch effect {
                 case .someEffect:
                     break

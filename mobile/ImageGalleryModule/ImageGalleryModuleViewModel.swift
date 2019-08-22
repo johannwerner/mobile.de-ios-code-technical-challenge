@@ -90,7 +90,7 @@ private extension ImageGalleryModuleViewModel {
     func observeViewEffect() {
         viewEffect
             .asObservable()
-            .subscribe(onNext: { [unowned self] effect in
+            .subscribe(onNext: { effect in
                 switch effect {
                 case .showImages:
                     break

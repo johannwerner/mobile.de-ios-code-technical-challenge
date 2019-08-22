@@ -36,7 +36,7 @@ extension ImageGalleryModuleUseCase {
                         return imageGalleryModel
                     })
                     return .success(listOfModels)
-                case let .error(error):
+                case .error:
                     return .error
                 }
         }
