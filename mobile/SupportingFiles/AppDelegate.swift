@@ -22,9 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = navigationController
         self.window = window
         
-        let configurator = ImageGalleryModuleConfigurator(imageGalleryModuleInteractor: ImageGalleryModuleInteractorApi())
-        let coordinator = ImageGalleryModuleCoordinator(navigationController: navigationController, configurator: configurator)
-        coordinator.showImageGallery(animated: true)
+        let interactor = IntroductionModuleInteractorApi()
+        let configurator = IntroductionModuleConfigurator(introductionModuleInteractor: interactor)
+        
+        let coordinator = IntroductionModuleCoordinator(
+            navigationController: navigationController,
+            configurator: configurator
+        )
+        coordinator.showIntroduction(animated: true)
         return true
     }
 
