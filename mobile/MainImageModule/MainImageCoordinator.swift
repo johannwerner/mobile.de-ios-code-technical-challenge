@@ -25,11 +25,11 @@ class MainImageCoordinator {
 
 extension MainImageCoordinator {
     
-    func showLargeImage(model: MainImageModel, animated: Bool) {
+    func showLargeImage(models: [MainImageModel], animated: Bool) {
         let viewModel = MainImageViewModel(
             coordinator: self,
             configurator: configurator,
-            model: model)
+            models: models)
         let viewController = MainImageViewController(viewModel: viewModel)
         navigationController.pushViewController(
             viewController,

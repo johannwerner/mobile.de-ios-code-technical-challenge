@@ -43,7 +43,7 @@ extension ImageGalleryModuleCoordinator {
         let coordinator = MainImageCoordinator(navigationController: navigationController, configurator: configurator)
         
         coordinator.showLargeImage(
-            model: model,
+            models: [model],
             animated: true
         )
     }
