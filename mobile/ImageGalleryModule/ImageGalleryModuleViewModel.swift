@@ -22,7 +22,8 @@ class ImageGalleryModuleViewModel {
     // MARK: - Life cycle
     
     init(coordinator: ImageGalleryModuleCoordinator,
-         configurator: ImageGalleryModuleConfigurator) {
+         configurator: ImageGalleryModuleConfigurator
+        ) {
         self.coordinator = coordinator
         self.useCase = ImageGalleryModuleUseCase(interactor: configurator.imageGalleryModuleInteractor)
         

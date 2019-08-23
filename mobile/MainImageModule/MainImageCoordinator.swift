@@ -32,7 +32,8 @@ extension MainImageCoordinator {
         let viewModel = MainImageViewModel(
             coordinator: self,
             configurator: configurator,
-            model: model)
+            model: model
+        )
         let viewController = MainImageViewController(viewModel: viewModel)
         navigationController.pushViewController(
             viewController,

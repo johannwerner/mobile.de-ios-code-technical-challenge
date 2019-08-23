@@ -9,7 +9,6 @@ class ImageGalleryModuleInteractorApi: ImageGalleryModuleInteractor {
     
     // MARK: - Life cycle
 
-    
     // MARK: - Internal
     
     func fetchImages() -> Observable<Async<Any>> {

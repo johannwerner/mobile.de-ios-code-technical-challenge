@@ -2,7 +2,7 @@ import RxSwift
 import RxCocoa
 import PureLayout
 
-/// <#Brief description of the purpose of the view controller#>
+/// Brief description of the purpose of the view controller
 /// - Requires: `RxSwift`
 class ImageGalleryModuleViewController: UIViewController {
     
@@ -26,7 +26,10 @@ class ImageGalleryModuleViewController: UIViewController {
         let collectionViewLayout = UICollectionViewFlowLayout()
         collectionViewLayout.minimumInteritemSpacing = 0
         collectionViewLayout.minimumLineSpacing = 0
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+        collectionView = UICollectionView(
+            frame: .zero,
+            collectionViewLayout: collectionViewLayout
+        )
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -63,7 +66,10 @@ private extension ImageGalleryModuleViewController {
         collectionView.autoPinEdgesToSuperviewEdges()
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(MainImageCollectionViewCell.self, forCellWithReuseIdentifier: MainImageCollectionViewCell.className)
+        collectionView.register(
+            MainImageCollectionViewCell.self,
+            forCellWithReuseIdentifier: MainImageCollectionViewCell.className
+        )
         collectionView.alpha = 0
         
         view.addSubview(showImagesButton)

@@ -15,7 +15,10 @@ class ImageGalleryModuleCoordinator {
 
     // MARK: - Life cycle
     
-    init(navigationController: UINavigationController, configurator: ImageGalleryModuleConfigurator) {
+    init(
+        navigationController: UINavigationController,
+        configurator: ImageGalleryModuleConfigurator
+        ) {
         self.navigationController = navigationController
         self.configurator = configurator
     }
@@ -26,9 +29,15 @@ class ImageGalleryModuleCoordinator {
 extension ImageGalleryModuleCoordinator {
     
     func showImageGallery(animated: Bool) {
-        let viewModel = ImageGalleryModuleViewModel(coordinator: self, configurator: configurator)
+        let viewModel = ImageGalleryModuleViewModel(
+            coordinator: self,
+            configurator: configurator
+        )
         let viewController = ImageGalleryModuleViewController(viewModel: viewModel)
-        navigationController.pushViewController(viewController, animated: animated)
+        navigationController.pushViewController(
+            viewController,
+            animated: animated
+        )
     }
 }
 
@@ -43,7 +52,10 @@ extension ImageGalleryModuleCoordinator {
         let interactor = MainImageInteractorApi()
         let configurator = MainImageConfigurator(mainImageInteractor: interactor)
         
-        let coordinator = MainImageCoordinator(navigationController: navigationController, configurator: configurator)
+        let coordinator = MainImageCoordinator(
+            navigationController: navigationController,
+            configurator: configurator
+        )
         
         coordinator.showLargeImage(
             model: model,
