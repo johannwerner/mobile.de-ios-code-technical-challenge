@@ -11,9 +11,11 @@ import Foundation
 struct ImageGalleryModel: Codable, ImageCollectionProtocol {
     
     var uri: String
+    
     var smallImageUrl: String {
         return "http://\(uri)_2.jpg"
     }
+    
     var bigImageUrl: String {
         return "http://\(uri)_27.jpg"
     }
