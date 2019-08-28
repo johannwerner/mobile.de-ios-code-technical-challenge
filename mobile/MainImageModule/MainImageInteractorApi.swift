@@ -1,8 +1,8 @@
 import RxSwift
 
-/// <#Brief description of the purpose of the interactor implementation#>
+/// Currently does nothing but exists for future use
 /// - Requires: `RxSwift`, `Async`
-class MainImageInteractorApi: MainImageInteractor {
+final class MainImageInteractorApi: MainImageInteractor {
     
     // MARK: Dependencies
     

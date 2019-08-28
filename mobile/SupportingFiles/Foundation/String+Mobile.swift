@@ -14,11 +14,12 @@ extension String {
     /// - Parameters:
     ///   - comment: The comment to place above the key-value pair in the strings file.
     func localizedString(_ comment: String = "") -> String {
-        return NSLocalizedString(
+        let localizedString = NSLocalizedString(
             self,
             tableName: "mobile",
             value: "missing string",
             comment: comment
         )
+        return localizedString
     }
 }

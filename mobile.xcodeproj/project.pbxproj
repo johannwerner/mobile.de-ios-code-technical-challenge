@@ -41,14 +41,14 @@
 		93586CAB230ECD7000E4E218 /* mobile.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93586CAA230ECD7000E4E218 /* mobile.strings */; };
 		93586CAD230ECDAD00E4E218 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CAC230ECDAD00E4E218 /* AppConstants.swift */; };
 		93586CAF230ED1F400E4E218 /* ImageGalleryTestInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CAE230ED1F400E4E218 /* ImageGalleryTestInteractor.swift */; };
-		93586CB9230ED6C200E4E218 /* IntoductionModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CB1230ED6C200E4E218 /* IntoductionModuleConfigurator.swift */; };
-		93586CBA230ED6C200E4E218 /* IntoductionModuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CB2230ED6C200E4E218 /* IntoductionModuleInteractor.swift */; };
-		93586CBB230ED6C200E4E218 /* IntoductionModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CB3230ED6C200E4E218 /* IntoductionModuleViewController.swift */; };
-		93586CBC230ED6C200E4E218 /* IntoductionModuleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CB4230ED6C200E4E218 /* IntoductionModuleUseCase.swift */; };
-		93586CBD230ED6C200E4E218 /* IntoductionModuleInteractorApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CB5230ED6C200E4E218 /* IntoductionModuleInteractorApi.swift */; };
-		93586CBE230ED6C200E4E218 /* IntoductionModuleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CB6230ED6C200E4E218 /* IntoductionModuleModel.swift */; };
-		93586CBF230ED6C200E4E218 /* IntoductionModuleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CB7230ED6C200E4E218 /* IntoductionModuleCoordinator.swift */; };
-		93586CC0230ED6C200E4E218 /* IntoductionModuleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CB8230ED6C200E4E218 /* IntoductionModuleViewModel.swift */; };
+		93586CB9230ED6C200E4E218 /* IntroductionModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CB1230ED6C200E4E218 /* IntroductionModuleConfigurator.swift */; };
+		93586CBA230ED6C200E4E218 /* IntroductionModuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CB2230ED6C200E4E218 /* IntroductionModuleInteractor.swift */; };
+		93586CBB230ED6C200E4E218 /* IntroductionModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CB3230ED6C200E4E218 /* IntroductionModuleViewController.swift */; };
+		93586CBC230ED6C200E4E218 /* IntroductionModuleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CB4230ED6C200E4E218 /* IntroductionModuleUseCase.swift */; };
+		93586CBD230ED6C200E4E218 /* IntroductionModuleInteractorApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CB5230ED6C200E4E218 /* IntroductionModuleInteractorApi.swift */; };
+		93586CBE230ED6C200E4E218 /* IntroductionModuleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CB6230ED6C200E4E218 /* IntroductionModuleModel.swift */; };
+		93586CBF230ED6C200E4E218 /* IntroductionModuleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CB7230ED6C200E4E218 /* IntroductionModuleCoordinator.swift */; };
+		93586CC0230ED6C200E4E218 /* IntroductionModuleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CB8230ED6C200E4E218 /* IntroductionModuleViewModel.swift */; };
 		93586CC2230ED72300E4E218 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93586CC1230ED72300E4E218 /* ColorTheme.swift */; };
 		C0CCB50BA5FAC381FBD8D715 /* Pods_mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC41C88221540D61F7F80DA0 /* Pods_mobile.framework */; };
 /* End PBXBuildFile section */
@@ -103,14 +103,14 @@
 		93586CAA230ECD7000E4E218 /* mobile.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = mobile.strings; sourceTree = "<group>"; };
 		93586CAC230ECDAD00E4E218 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		93586CAE230ED1F400E4E218 /* ImageGalleryTestInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryTestInteractor.swift; sourceTree = "<group>"; };
-		93586CB1230ED6C200E4E218 /* IntoductionModuleConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntoductionModuleConfigurator.swift; sourceTree = "<group>"; };
-		93586CB2230ED6C200E4E218 /* IntoductionModuleInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntoductionModuleInteractor.swift; sourceTree = "<group>"; };
-		93586CB3230ED6C200E4E218 /* IntoductionModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntoductionModuleViewController.swift; sourceTree = "<group>"; };
-		93586CB4230ED6C200E4E218 /* IntoductionModuleUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntoductionModuleUseCase.swift; sourceTree = "<group>"; };
-		93586CB5230ED6C200E4E218 /* IntoductionModuleInteractorApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntoductionModuleInteractorApi.swift; sourceTree = "<group>"; };
-		93586CB6230ED6C200E4E218 /* IntoductionModuleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntoductionModuleModel.swift; sourceTree = "<group>"; };
-		93586CB7230ED6C200E4E218 /* IntoductionModuleCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntoductionModuleCoordinator.swift; sourceTree = "<group>"; };
-		93586CB8230ED6C200E4E218 /* IntoductionModuleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntoductionModuleViewModel.swift; sourceTree = "<group>"; };
+		93586CB1230ED6C200E4E218 /* IntroductionModuleConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionModuleConfigurator.swift; sourceTree = "<group>"; };
+		93586CB2230ED6C200E4E218 /* IntroductionModuleInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionModuleInteractor.swift; sourceTree = "<group>"; };
+		93586CB3230ED6C200E4E218 /* IntroductionModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionModuleViewController.swift; sourceTree = "<group>"; };
+		93586CB4230ED6C200E4E218 /* IntroductionModuleUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionModuleUseCase.swift; sourceTree = "<group>"; };
+		93586CB5230ED6C200E4E218 /* IntroductionModuleInteractorApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionModuleInteractorApi.swift; sourceTree = "<group>"; };
+		93586CB6230ED6C200E4E218 /* IntroductionModuleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionModuleModel.swift; sourceTree = "<group>"; };
+		93586CB7230ED6C200E4E218 /* IntroductionModuleCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionModuleCoordinator.swift; sourceTree = "<group>"; };
+		93586CB8230ED6C200E4E218 /* IntroductionModuleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionModuleViewModel.swift; sourceTree = "<group>"; };
 		93586CC1230ED72300E4E218 /* ColorTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorTheme.swift; path = mobile/SupportingFiles/ColorTheme.swift; sourceTree = SOURCE_ROOT; };
 		9B9A5531CD37C346273EA6E9 /* Pods-mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobile.release.xcconfig"; path = "Target Support Files/Pods-mobile/Pods-mobile.release.xcconfig"; sourceTree = "<group>"; };
 		BE44E8C14037ACBE69E721AD /* Pods-mobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileTests.debug.xcconfig"; path = "Target Support Files/Pods-mobileTests/Pods-mobileTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -296,14 +296,14 @@
 		93586CB0230ED6C200E4E218 /* IntroductionModule */ = {
 			isa = PBXGroup;
 			children = (
-				93586CB3230ED6C200E4E218 /* IntoductionModuleViewController.swift */,
-				93586CB8230ED6C200E4E218 /* IntoductionModuleViewModel.swift */,
-				93586CB6230ED6C200E4E218 /* IntoductionModuleModel.swift */,
-				93586CB4230ED6C200E4E218 /* IntoductionModuleUseCase.swift */,
-				93586CB2230ED6C200E4E218 /* IntoductionModuleInteractor.swift */,
-				93586CB5230ED6C200E4E218 /* IntoductionModuleInteractorApi.swift */,
-				93586CB1230ED6C200E4E218 /* IntoductionModuleConfigurator.swift */,
-				93586CB7230ED6C200E4E218 /* IntoductionModuleCoordinator.swift */,
+				93586CB3230ED6C200E4E218 /* IntroductionModuleViewController.swift */,
+				93586CB8230ED6C200E4E218 /* IntroductionModuleViewModel.swift */,
+				93586CB6230ED6C200E4E218 /* IntroductionModuleModel.swift */,
+				93586CB4230ED6C200E4E218 /* IntroductionModuleUseCase.swift */,
+				93586CB2230ED6C200E4E218 /* IntroductionModuleInteractor.swift */,
+				93586CB5230ED6C200E4E218 /* IntroductionModuleInteractorApi.swift */,
+				93586CB1230ED6C200E4E218 /* IntroductionModuleConfigurator.swift */,
+				93586CB7230ED6C200E4E218 /* IntroductionModuleCoordinator.swift */,
 			);
 			path = IntroductionModule;
 			sourceTree = "<group>";
@@ -479,15 +479,15 @@
 				934082EC230AF2630073A6FD /* ObservableType.swift in Sources */,
 				934082D6230AE9A00073A6FD /* ImageGalleryModuleUseCase.swift in Sources */,
 				934082AD230AE4D80073A6FD /* AppDelegate.swift in Sources */,
-				93586CBD230ED6C200E4E218 /* IntoductionModuleInteractorApi.swift in Sources */,
+				93586CBD230ED6C200E4E218 /* IntroductionModuleInteractorApi.swift in Sources */,
 				93586CC2230ED72300E4E218 /* ColorTheme.swift in Sources */,
 				934082D5230AE9A00073A6FD /* ImageGalleryModuleCoordinator.swift in Sources */,
 				93586CA8230EC7C200E4E218 /* ImageCollectionProtocol.swift in Sources */,
 				93586CA5230E92D300E4E218 /* MainImageCollectionViewCell.swift in Sources */,
 				934082D7230AE9A00073A6FD /* ImageGalleryModuleViewController.swift in Sources */,
-				93586CBE230ED6C200E4E218 /* IntoductionModuleModel.swift in Sources */,
-				93586CBB230ED6C200E4E218 /* IntoductionModuleViewController.swift in Sources */,
-				93586CB9230ED6C200E4E218 /* IntoductionModuleConfigurator.swift in Sources */,
+				93586CBE230ED6C200E4E218 /* IntroductionModuleModel.swift in Sources */,
+				93586CBB230ED6C200E4E218 /* IntroductionModuleViewController.swift in Sources */,
+				93586CB9230ED6C200E4E218 /* IntroductionModuleConfigurator.swift in Sources */,
 				934082D8230AE9A00073A6FD /* ImageGalleryModuleInteractor.swift in Sources */,
 				93586CA0230E8AE500E4E218 /* MainImageViewModel.swift in Sources */,
 				934082EA230AF0270073A6FD /* ImageGalleryModel.swift in Sources */,
@@ -503,16 +503,16 @@
 				934082E4230AEAAF0073A6FD /* Decodable+Utils.swift in Sources */,
 				93586C9E230E8AE500E4E218 /* MainImageModel.swift in Sources */,
 				93586C90230D414A00E4E218 /* UIImageView+Network.swift in Sources */,
-				93586CBC230ED6C200E4E218 /* IntoductionModuleUseCase.swift in Sources */,
+				93586CBC230ED6C200E4E218 /* IntroductionModuleUseCase.swift in Sources */,
 				934082E7230AEAAF0073A6FD /* NSObject+Mobile.swift in Sources */,
 				934082DA230AE9A00073A6FD /* ImageGalleryModuleInteractorApi.swift in Sources */,
 				934082D9230AE9A00073A6FD /* ImageGalleryModuleModel.swift in Sources */,
-				93586CC0230ED6C200E4E218 /* IntoductionModuleViewModel.swift in Sources */,
+				93586CC0230ED6C200E4E218 /* IntroductionModuleViewModel.swift in Sources */,
 				934082E8230AEAAF0073A6FD /* Async.swift in Sources */,
-				93586CBA230ED6C200E4E218 /* IntoductionModuleInteractor.swift in Sources */,
+				93586CBA230ED6C200E4E218 /* IntroductionModuleInteractor.swift in Sources */,
 				934082DC230AE9A00073A6FD /* ImageGalleryModuleConfigurator.swift in Sources */,
 				93586C9D230E8AE500E4E218 /* MainImageInteractor.swift in Sources */,
-				93586CBF230ED6C200E4E218 /* IntoductionModuleCoordinator.swift in Sources */,
+				93586CBF230ED6C200E4E218 /* IntroductionModuleCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

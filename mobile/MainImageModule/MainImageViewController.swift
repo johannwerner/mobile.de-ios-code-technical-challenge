@@ -1,9 +1,9 @@
 import RxSwift
 import RxCocoa
 
-/// <#Brief description of the purpose of the view controller#>
+/// Contains a collection view of main images and displays the selected image
 /// - Requires: `RxSwift`
-class MainImageViewController: UIViewController {
+final class MainImageViewController: UIViewController {
     
     // MARK: Dependencies
     private let viewModel: MainImageViewModel

@@ -2,9 +2,9 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-/// <#Brief description of the purpose of the coordinator#>
+/// Handles the navigation in and out of MainImageCoordinator
 /// - Requires: `RxSwift`
-class MainImageCoordinator {
+final class MainImageCoordinator {
 
     // MARK: Dependencies
     private let navigationController: UINavigationController

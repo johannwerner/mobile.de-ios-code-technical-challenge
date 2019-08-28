@@ -1,10 +1,10 @@
 import RxCocoa
 import RxSwift
 
-/// <#Brief description of the purpose of the view model#>
+/// contains the use cases for image gallery
 /// - Requires: `RxSwift`, `MvRx`
 /// - Note: A view model can refer to one or more use cases.
-class ImageGalleryModuleViewModel {
+final class ImageGalleryModuleViewModel {
 
     // MARK: - Properties
     private var models: [ImageGalleryModel]  = []

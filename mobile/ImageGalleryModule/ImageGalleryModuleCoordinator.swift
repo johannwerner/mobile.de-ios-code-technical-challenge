@@ -2,9 +2,9 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-/// <#Brief description of the purpose of the coordinator#>
+/// Handles the navigation in and out of the ImageGalleryModule
 /// - Requires: `RxSwift`
-class ImageGalleryModuleCoordinator {
+final class ImageGalleryModuleCoordinator {
 
     // MARK: Dependencies
     private let navigationController: UINavigationController
@@ -44,7 +44,12 @@ extension ImageGalleryModuleCoordinator {
 // MARK: - Navigation OUT
 
 extension ImageGalleryModuleCoordinator {
-    func showLargeImage(imageGalleryModels: [ImageGalleryModel], selectedIndex: Int, animted: Bool) {
+    
+    func showLargeImage(
+        imageGalleryModels: [ImageGalleryModel],
+        selectedIndex: Int,
+        animted: Bool
+        ) {
         let model = MainImageModel(
             imageGalleryModels: imageGalleryModels,
             selectedIndex: selectedIndex

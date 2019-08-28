@@ -2,9 +2,9 @@ import RxSwift
 import RxCocoa
 import PureLayout
 
-/// Brief description of the purpose of the view controller
+/// Image Gallery View with mutiple images
 /// - Requires: `RxSwift`
-class ImageGalleryModuleViewController: UIViewController {
+final class ImageGalleryModuleViewController: UIViewController {
     
     // MARK: Dependencies
     private let viewModel: ImageGalleryModuleViewModel

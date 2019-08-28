@@ -1,8 +1,8 @@
 import RxSwift
 
-/// <#Brief description of the purpose of the use case#>
+/// downloads a list of images from the network and parses it to ImageGalleryModel
 /// - Requires: `RxSwift`, `Async`
-class ImageGalleryModuleUseCase {
+final class ImageGalleryModuleUseCase {
     
     // MARK: Dependencies
     private let interactor: ImageGalleryModuleInteractor

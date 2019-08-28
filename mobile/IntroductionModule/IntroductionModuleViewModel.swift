@@ -10,8 +10,8 @@ final class  IntroductionModuleViewModel {
     let viewEffect = PublishRelay< IntroductionModuleViewEffect>()
     
     // MARK: Dependencies
-    private let coordinator:  IntroductionModuleCoordinator
-    private let useCase:  IntroductionModuleUseCase
+    private let coordinator: IntroductionModuleCoordinator
+    private let useCase: IntroductionModuleUseCase
     
     // MARK: Tooling
     private let disposeBag = DisposeBag()
@@ -19,11 +19,11 @@ final class  IntroductionModuleViewModel {
     // MARK: - Life cycle
     
     init(
-        coordinator:  IntroductionModuleCoordinator,
-         configurator:  IntroductionModuleConfigurator
+        coordinator: IntroductionModuleCoordinator,
+        configurator: IntroductionModuleConfigurator
         ) {
         self.coordinator = coordinator
-        self.useCase =  IntroductionModuleUseCase(interactor:  configurator.introductionModuleInteractor)
+        self.useCase =  IntroductionModuleUseCase(interactor: configurator.introductionModuleInteractor)
         
         observeViewEffect()
     }

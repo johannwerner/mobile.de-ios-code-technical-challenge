@@ -18,9 +18,16 @@ extension UIImageView {
                         placeholderImage: UIImage? = nil,
                         completed: LoadImageCompletion? = nil) {
         let url = URL(string: urlString)
-        setRemoteImage(url: url, priority: priority, placeholderImage: placeholderImage, completed: completed)
+        setRemoteImage(
+            url: url,
+            priority: priority,
+            placeholderImage: placeholderImage,
+            completed: completed
+        )
     }
-    
+}
+
+private extension UIImageView {
     /// Loads image from url
     ///
     /// - Parameters:

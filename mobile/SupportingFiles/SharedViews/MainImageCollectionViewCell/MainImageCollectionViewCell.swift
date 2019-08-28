@@ -9,7 +9,7 @@
 import UIKit
 import PureLayout
 
-class MainImageCollectionViewCell: UICollectionViewCell {
+final class MainImageCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     private let imageView = UIImageView()
     // MARK: - Life Cycle
@@ -22,7 +22,6 @@ class MainImageCollectionViewCell: UICollectionViewCell {
         super.init(coder: aDecoder)
     }
 }
-
 
 // MARK: - Public
 extension MainImageCollectionViewCell {

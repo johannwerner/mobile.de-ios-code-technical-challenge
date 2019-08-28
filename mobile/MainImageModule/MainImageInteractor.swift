@@ -1,5 +1,5 @@
 import RxSwift
 
-/// <#Brief description of the purpose of the interactor#>
+/// The protocol for MainImageInteractor
 /// - Requires: `RxSwift`
 protocol MainImageInteractor {}

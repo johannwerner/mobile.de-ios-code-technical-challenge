@@ -1,8 +1,8 @@
 import RxSwift
 
-/// <#Brief description of the purpose of the use case#>
+/// Currently does nothing but exists for future use
 /// - Requires: `RxSwift`, `Async`
-class MainImageUseCase {
+final class MainImageUseCase {
     
     // MARK: Dependencies
     private let interactor: MainImageInteractor

@@ -13,23 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let navigationController = UINavigationController()
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        window.makeKeyAndVisible()
-        window.rootViewController = navigationController
-        self.window = window
-        
-        let interactor = IntroductionModuleInteractorApi()
-        let configurator = IntroductionModuleConfigurator(introductionModuleInteractor: interactor)
-        
-        let coordinator = IntroductionModuleCoordinator(
-            navigationController: navigationController,
-            configurator: configurator
-        )
-        coordinator.showIntroduction(animated: true)
+
+        startApp()
         return true
     }
 
@@ -54,7 +41,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+}
 
-
+private extension AppDelegate {
+    func startApp() {
+        let startNavigationController = createNavigationController()
+        showIntroduction(navigationController: startNavigationController)
+    }
+    
+    func createNavigationController() -> UINavigationController {
+        let navigationController = UINavigationController()
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.makeKeyAndVisible()
+        window.rootViewController = navigationController
+        self.window = window
+        return navigationController
+    }
+    
+    func showIntroduction(navigationController: UINavigationController) {
+        let interactor = IntroductionModuleInteractorApi()
+        let configurator = IntroductionModuleConfigurator(introductionModuleInteractor: interactor)
+        
+        let coordinator = IntroductionModuleCoordinator(
+            navigationController: navigationController,
+            configurator: configurator
+        )
+        coordinator.showIntroduction(animated: true)
+    }
+    
+    func showImageGallery(navigationController: UINavigationController) {
+        let interactor = ImageGalleryModuleInteractorApi()
+        let configurator = ImageGalleryModuleConfigurator(imageGalleryModuleInteractor: interactor)
+        let coordinator = ImageGalleryModuleCoordinator(navigationController: navigationController, configurator: configurator)
+        coordinator.showImageGallery(animated: true)
+    }
 }
 

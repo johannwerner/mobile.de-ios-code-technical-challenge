@@ -1,9 +1,9 @@
 import RxSwift
 import RxAlamofire
 
-/// <#Brief description of the purpose of the interactor implementation#>
+/// Fetches images from the network for the use case of fetching car images and parsing it to ImageGalleryModel
 /// - Requires: `RxSwift`, `Async`
-class ImageGalleryModuleInteractorApi: ImageGalleryModuleInteractor {
+final class ImageGalleryModuleInteractorApi: ImageGalleryModuleInteractor {
     
     // MARK: Dependencies
     

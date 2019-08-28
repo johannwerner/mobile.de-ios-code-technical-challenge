@@ -1,7 +1,7 @@
 import RxCocoa
 import RxSwift
 
-class MainImageConfigurator {
+final class MainImageConfigurator {
     
     // MARK: Dependencies
     

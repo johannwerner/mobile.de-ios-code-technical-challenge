@@ -1,10 +1,10 @@
 import RxCocoa
 import RxSwift
 
-/// <#Brief description of the purpose of the view model#>
-/// - Requires: `RxSwift`, `MvRx`
+/// Contains the use cases for Main Image View
+/// - Requires: `RxSwift`
 /// - Note: A view model can refer to one or more use cases.
-class MainImageViewModel {
+final class MainImageViewModel {
 
     // MARK: MvRx
     let viewEffect = PublishRelay<MainImageViewEffect>()

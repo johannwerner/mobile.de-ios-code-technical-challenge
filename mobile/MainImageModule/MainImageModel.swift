@@ -18,8 +18,8 @@ struct MainImageModel {
     var selectedIndex: Int
     var models: [ImageModel]
 
-    
     struct ImageModel: ImageCollectionProtocol {
+        
         var bigImageUrl: String
         
         var imageUrlToShow: String {
