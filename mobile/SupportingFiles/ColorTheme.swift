@@ -14,7 +14,6 @@ extension ColorTheme {
 // MARK: - Private Methods
 private extension ColorTheme {
     
-   
     ///  Red/Blue /Green from 0 to 255 to what color. Do not use divide by /255 because this is being done here.
     static func colorWith(
         red: CGFloat,

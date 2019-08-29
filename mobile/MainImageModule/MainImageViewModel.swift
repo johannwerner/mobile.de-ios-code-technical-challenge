@@ -70,7 +70,7 @@ private extension MainImageViewModel {}
 private extension MainImageViewModel {
     
     /// - Note: Privately observing view effects in the view model is meant to make the association between a specific effect and certain view states easier.
-    private func observeViewEffect() {
+    func observeViewEffect() {
         viewEffect
             .asObservable()
             .subscribe(onNext: { effect in
