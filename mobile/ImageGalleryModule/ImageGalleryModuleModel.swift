@@ -2,7 +2,7 @@
 enum ImageGalleryModuleStatus {
     case error
     case loading
-    case success(ImageGalleryModel)
+    case success
 }
 
 /// View effect enum for ImageGalleryModule.

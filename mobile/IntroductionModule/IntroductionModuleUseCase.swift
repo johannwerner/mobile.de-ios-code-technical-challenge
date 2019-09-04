@@ -23,10 +23,7 @@ extension IntroductionModuleUseCase {
                 case .loading:
                     return .loading
                 case .success(let data):
-                    guard let imageData = data as? Dictionary<String, Any> else {
-                        return.error
-                    }
-                    guard let imageGalleryModel = IntroductionImageGalleryModel.parse(from: imageData) else {
+                    guard let imageGalleryModel = IntroductionImageGalleryModel.parse(from: data) else {
                         return .error
                     }
                     return .success(imageGalleryModel)

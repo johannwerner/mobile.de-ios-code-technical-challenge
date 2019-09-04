@@ -16,6 +16,4 @@ class ImageGalleryModuleUseCase {
 
 // MARK: - Public functions
 
-extension ImageGalleryModuleUseCase {
-
-}
+extension ImageGalleryModuleUseCase {}
