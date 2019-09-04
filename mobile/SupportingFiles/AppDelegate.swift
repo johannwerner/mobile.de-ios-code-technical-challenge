@@ -68,12 +68,5 @@ private extension AppDelegate {
         )
         coordinator.showIntroduction(animated: true)
     }
-    
-    func showImageGallery(navigationController: UINavigationController) {
-        let interactor = ImageGalleryModuleInteractorApi()
-        let configurator = ImageGalleryModuleConfigurator(imageGalleryModuleInteractor: interactor)
-        let coordinator = ImageGalleryModuleCoordinator(navigationController: navigationController, configurator: configurator)
-        coordinator.showImageGallery(animated: true)
-    }
 }
 

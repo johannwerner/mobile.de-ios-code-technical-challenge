@@ -15,6 +15,7 @@ final class IntroductionModuleViewController: UIViewController {
     private let primaryButton = UIButton()
     private let titleLabel = UILabel()
     private let subtitleLabel = UILabel()
+    private let activityIndicator = UIActivityIndicatorView()
     
     // MARK: Tooling
     private let disposeBag = DisposeBag()
@@ -54,6 +55,7 @@ private extension  IntroductionModuleViewController {
         setUpNextButton()
         setUpTitleLable()
         setUpSubtitleLable()
+        setUpActivityIndicator()
     }
     
     func setUpNextButton() {
@@ -91,6 +93,30 @@ private extension  IntroductionModuleViewController {
         subtitleLabel.text = "introduction_sub_title".localizedString()
     }
     
+    func setUpActivityIndicator() {
+        primaryButton.addSubview(activityIndicator)
+        activityIndicator.autoCenterInSuperview()
+        activityIndicator.style = .whiteLarge
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.stopAnimating()
+    }
+    
+    func startLoadingAnimations() {
+        self.activityIndicator.startAnimating()
+        primaryButton.setTitle(
+            "",
+            for: .normal
+        )
+    }
+    
+    func stopLoadingAnimations() {
+        self.activityIndicator.stopAnimating()
+        primaryButton.setTitle(
+            "introduction_primary_button".localizedString(),
+            for: .normal
+        )
+    }
+    
     /// Binds controller user events to view model.
     func setUpBinding() {
         viewModel.bind(to: viewAction)
@@ -105,9 +131,12 @@ private extension  IntroductionModuleViewController {
     func observeViewEffect() {
         viewModel
         .viewEffect
-        .subscribe(onNext: { effect in
+        .subscribe(onNext: { [unowned self] effect in
             switch effect {
-            case .success:break
+            case .success:
+                self.stopLoadingAnimations()
+            case .loading:
+                self.startLoadingAnimations()
             }
         })
         .disposed(by: disposeBag)}

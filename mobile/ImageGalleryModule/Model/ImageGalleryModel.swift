@@ -8,19 +8,24 @@
 
 import Foundation
 
-struct ImageGalleryModel: Codable, ImageCollectionProtocol {
+struct ImageGalleryModel: Codable {
     
-    var uri: String
+    var images: [Image]
     
-    var smallImageUrl: String {
-        return "http://\(uri)_2.jpg"
+    struct Image: Codable, ImageCollectionProtocol {
+        var uri: String
+        
+        var smallImageUrl: String {
+            return "http://\(uri)_2.jpg"
+        }
+        
+        var bigImageUrl: String {
+            return "http://\(uri)_27.jpg"
+        }
+        
+        var imageUrlToShow: String {
+            return smallImageUrl
+        }
     }
-    
-    var bigImageUrl: String {
-        return "http://\(uri)_27.jpg"
-    }
-    
-    var imageUrlToShow: String {
-        return smallImageUrl
-    }
+
 }

@@ -2,9 +2,9 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-/// Handles the navigation in and out of the ImageGalleryModule
+/// <#Brief description of the purpose of the coordinator#>
 /// - Requires: `RxSwift`
-final class ImageGalleryModuleCoordinator {
+class ImageGalleryModuleCoordinator {
 
     // MARK: Dependencies
     private let navigationController: UINavigationController
@@ -28,10 +28,11 @@ final class ImageGalleryModuleCoordinator {
 
 extension ImageGalleryModuleCoordinator {
     
-    func showImageGallery(animated: Bool) {
+    func showImageGallery(model: ImageGalleryModel, animated: Bool) {
         let viewModel = ImageGalleryModuleViewModel(
             coordinator: self,
-            configurator: configurator
+            configurator: configurator,
+            model: model
         )
         let viewController = ImageGalleryModuleViewController(viewModel: viewModel)
         navigationController.pushViewController(
@@ -44,14 +45,9 @@ extension ImageGalleryModuleCoordinator {
 // MARK: - Navigation OUT
 
 extension ImageGalleryModuleCoordinator {
-    
-    func showLargeImage(
-        imageGalleryModels: [ImageGalleryModel],
-        selectedIndex: Int,
-        animted: Bool
-        ) {
+    func showLargeImage(imageGalleryModel: ImageGalleryModel, selectedIndex: Int, animted: Bool) {
         let model = MainImageModel(
-            imageGalleryModels: imageGalleryModels,
+            imageGalleryModel: imageGalleryModel,
             selectedIndex: selectedIndex
         )
         let interactor = MainImageInteractorApi()
@@ -72,10 +68,10 @@ extension ImageGalleryModuleCoordinator {
 // MARK: - MainImageModel Dependancy
 private extension MainImageModel {
     init(
-        imageGalleryModels: [ImageGalleryModel],
+        imageGalleryModel: ImageGalleryModel,
         selectedIndex: Int
         ) {
-        let mainImageModels = imageGalleryModels.compactMap { imageGalleryModel -> MainImageModel.ImageModel? in
+        let mainImageModels = imageGalleryModel.images.compactMap { imageGalleryModel -> MainImageModel.ImageModel? in
             return MainImageModel.ImageModel(bigImageUrl: imageGalleryModel.bigImageUrl)
         }
         let model = MainImageModel(
@@ -87,7 +83,7 @@ private extension MainImageModel {
 }
 
 private extension MainImageModel.ImageModel {
-    init(imageGalleryModel: ImageGalleryModel) {
+    init(imageGalleryModel: ImageGalleryModel.Image) {
         let model = MainImageModel.ImageModel(bigImageUrl: imageGalleryModel.bigImageUrl)
         self = model
     }

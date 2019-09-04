@@ -1,11 +1,14 @@
 /// Operation status enum for  IntroductionModule.
-enum  IntroductionModuleStatus {
-    case someStatus
+enum IntroductionModuleStatus {
+    case error
+    case loading
+    case success(IntroductionImageGalleryModel)
 }
 
 /// View effect enum for IntroductionModule.
 enum  IntroductionModuleViewEffect {
     case success
+    case loading
 }
 
 /// View action enum for IntroductionModule.
@@ -15,4 +18,26 @@ enum  IntroductionModuleViewAction {
 
 struct IntroductionConstants {
     static let titleLabelText = "Johann Werner"
+}
+
+struct IntroductionImageGalleryModel: Codable {
+    
+    var images: [Image]
+    
+    struct Image: Codable, ImageCollectionProtocol {
+        var uri: String
+        
+        var smallImageUrl: String {
+            return "http://\(uri)_2.jpg"
+        }
+        
+        var bigImageUrl: String {
+            return "http://\(uri)_27.jpg"
+        }
+        
+        var imageUrlToShow: String {
+            return smallImageUrl
+        }
+    }
+    
 }

@@ -4,7 +4,7 @@ import RxSwift
 ///
 /// - Requires: `RxSwift`, `RxCocoa`
 /// - Note: A view model can refer to one or more use cases.
-final class  IntroductionModuleViewModel {
+final class IntroductionModuleViewModel {
 
     // MARK: MvRx
     let viewEffect = PublishRelay< IntroductionModuleViewEffect>()
@@ -39,7 +39,7 @@ extension  IntroductionModuleViewModel {
             .subscribe(onNext: { [unowned self] viewAction in
                 switch viewAction {
                 case .primaryButtonPressed:
-                    self.showNextView()
+                    self.fetchImages()
                 }
             })
             .disposed(by: disposeBag)
@@ -49,8 +49,28 @@ extension  IntroductionModuleViewModel {
 // MARK: - Private functions
 
 private extension  IntroductionModuleViewModel {
-    func showNextView() {
-        coordinator.showImageGallery(animated: true)
+    
+    func fetchImages() {
+        self.useCase.fetchImages()
+            .subscribe(onNext: { [unowned self] status in
+                switch status {
+                case .success(let model):
+                    self.viewEffect.accept(.success)
+                    self.showNextView(model: model)
+                case .error:
+                    break
+                case .loading:
+                    self.viewEffect.accept(.loading)
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func showNextView(model: IntroductionImageGalleryModel) {
+        coordinator.showImageGallery(
+            model: model,
+            animated: true
+        )
     }
 }
 
@@ -65,6 +85,7 @@ private extension  IntroductionModuleViewModel {
             .subscribe(onNext: { effect in
                 switch effect {
                 case .success: break
+                case .loading: break
                 }
             })
             .disposed(by: disposeBag)
