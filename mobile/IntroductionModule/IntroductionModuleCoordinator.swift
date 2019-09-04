@@ -42,6 +42,9 @@ extension IntroductionModuleCoordinator {
 
 extension IntroductionModuleCoordinator {
 
+    
+
+    // MARK: - ImageGalleryDependency
     func showImageGallery(
         model: IntroductionImageGalleryModel,
         animated: Bool
@@ -61,7 +64,6 @@ extension IntroductionModuleCoordinator {
     }
 }
 
-// MARK: - ImageGalleryDependcy
 private extension ImageGalleryModel {
     
     init(introductionModel: IntroductionImageGalleryModel) {
