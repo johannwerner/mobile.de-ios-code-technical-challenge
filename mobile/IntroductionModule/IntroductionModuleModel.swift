@@ -18,6 +18,7 @@ enum  IntroductionModuleViewAction {
 
 struct IntroductionConstants {
     static let titleLabelText = "Johann Werner"
+    static var url: String = "https://m.mobile.de/svc/a/281794529"
 }
 
 struct IntroductionImageGalleryModel: Codable {

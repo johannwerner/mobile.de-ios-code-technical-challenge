@@ -10,7 +10,7 @@ final class IntroductionModuleInteractorApi: IntroductionModuleInteractor {
     
     // MARK: - Internal
     func fetchImages() -> Observable<Async<Any>> {
-        let url = ImageGalleryConstants.url
+        let url = IntroductionConstants.url
         
         let result = RxAlamofire
             .requestJSON(.get,

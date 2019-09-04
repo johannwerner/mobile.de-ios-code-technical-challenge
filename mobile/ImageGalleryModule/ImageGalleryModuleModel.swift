@@ -15,8 +15,3 @@ enum ImageGalleryModuleViewAction {
     case showImages
     case selectedIndex(Int)
 }
-
-struct ImageGalleryConstants {
-    static var url: String = "https://m.mobile.de/svc/a/281794529"
-    static var imagesKeyValue = "images"
-}
