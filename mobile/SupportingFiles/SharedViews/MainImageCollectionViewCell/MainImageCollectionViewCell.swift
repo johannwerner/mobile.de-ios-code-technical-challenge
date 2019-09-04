@@ -14,7 +14,7 @@ final class MainImageCollectionViewCell: UICollectionViewCell {
     private let imageView = UIImageView()
     // MARK: - Life Cycle
     override init(frame: CGRect) {
-        super.init(frame: .zero)
+        super.init(frame: frame)
         initUI()
     }
     

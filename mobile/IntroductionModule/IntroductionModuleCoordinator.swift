@@ -6,7 +6,7 @@ final class IntroductionModuleCoordinator {
 
     // MARK: Dependencies
     private let navigationController: UINavigationController
-    private let configurator:  IntroductionModuleConfigurator
+    private let configurator: IntroductionModuleConfigurator
     
     // MARK: Tooling
 
@@ -14,7 +14,7 @@ final class IntroductionModuleCoordinator {
     
     init(
         navigationController: UINavigationController,
-        configurator:  IntroductionModuleConfigurator
+        configurator: IntroductionModuleConfigurator
         ) {
         self.navigationController = navigationController
         self.configurator = configurator
@@ -23,7 +23,7 @@ final class IntroductionModuleCoordinator {
 
 // MARK: - Navigation IN
 
-extension  IntroductionModuleCoordinator {
+extension IntroductionModuleCoordinator {
     
     func showIntroduction(animated: Bool) {
         let viewModel =  IntroductionModuleViewModel(
@@ -40,7 +40,7 @@ extension  IntroductionModuleCoordinator {
 
 // MARK: - Navigation OUT
 
-extension  IntroductionModuleCoordinator {
+extension IntroductionModuleCoordinator {
 
     func showImageGallery(animated: Bool) {
 

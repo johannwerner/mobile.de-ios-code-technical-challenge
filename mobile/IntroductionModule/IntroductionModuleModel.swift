@@ -3,12 +3,12 @@ enum  IntroductionModuleStatus {
     case someStatus
 }
 
-/// View effect enum for  IntroductionModule.
+/// View effect enum for IntroductionModule.
 enum  IntroductionModuleViewEffect {
     case success
 }
 
-/// View action enum for  IntroductionModule.
+/// View action enum for IntroductionModule.
 enum  IntroductionModuleViewAction {
     case primaryButtonPressed
 }
