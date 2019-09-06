@@ -7,6 +7,7 @@ enum IntroductionModuleStatus {
 
 /// View effect enum for IntroductionModule.
 enum  IntroductionModuleViewEffect {
+    case error
     case success
     case loading
 }
@@ -17,28 +18,16 @@ enum  IntroductionModuleViewAction {
 }
 
 struct IntroductionConstants {
-    static let titleLabelText = "Johann Werner"
+    static let titleLabelText: String = "Johann Werner"
     static var url: String = "https://m.mobile.de/svc/a/281794529"
+    static var localizedName: String = "IntroductionModule"
 }
 
 struct IntroductionImageGalleryModel: Codable {
     
     var images: [Image]
     
-    struct Image: Codable, ImageCollectionProtocol {
+    struct Image: Codable {
         var uri: String
-        
-        var smallImageUrl: String {
-            return "http://\(uri)_2.jpg"
-        }
-        
-        var bigImageUrl: String {
-            return "http://\(uri)_27.jpg"
-        }
-        
-        var imageUrlToShow: String {
-            return smallImageUrl
-        }
     }
-    
 }

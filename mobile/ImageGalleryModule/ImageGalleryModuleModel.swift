@@ -15,3 +15,10 @@ enum ImageGalleryModuleViewAction {
     case showImages
     case selectedIndex(Int)
 }
+
+struct ImageGalleryModuleModel {
+    var imageGalleryItem: ImageGalleryItem
+    ///Keeps track of which item has been selected.
+    /// Nil if nothing has been selected
+    var selectedIndex: Int?
+}

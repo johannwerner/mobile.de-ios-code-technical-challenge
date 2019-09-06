@@ -6,17 +6,17 @@ import RxSwift
 /// - Note: A view model can refer to one or more use cases.
 final class IntroductionModuleViewModel {
 
-    // MARK: MvRx
+// MARK: MvRx
     let viewEffect = PublishRelay< IntroductionModuleViewEffect>()
     
-    // MARK: Dependencies
+// MARK: Dependencies
     private let coordinator: IntroductionModuleCoordinator
     private let useCase: IntroductionModuleUseCase
     
-    // MARK: Tooling
+// MARK: Tooling
     private let disposeBag = DisposeBag()
 
-    // MARK: - Life cycle
+// MARK: - Life cycle
     
     init(
         coordinator: IntroductionModuleCoordinator,
@@ -58,7 +58,7 @@ private extension  IntroductionModuleViewModel {
                     self.viewEffect.accept(.success)
                     self.showNextView(model: model)
                 case .error:
-                    break
+                    self.viewEffect.accept(.error)
                 case .loading:
                     self.viewEffect.accept(.loading)
                 }
@@ -86,6 +86,7 @@ private extension  IntroductionModuleViewModel {
                 switch effect {
                 case .success: break
                 case .loading: break
+                case   .error: break
                 }
             })
             .disposed(by: disposeBag)

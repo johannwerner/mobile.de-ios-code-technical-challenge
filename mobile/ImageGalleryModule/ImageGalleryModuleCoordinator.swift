@@ -28,11 +28,11 @@ class ImageGalleryModuleCoordinator {
 
 extension ImageGalleryModuleCoordinator {
     
-    func showImageGallery(model: ImageGalleryModel, animated: Bool) {
+    func showImageGallery(model: ImageGalleryItem, animated: Bool) {
         let viewModel = ImageGalleryModuleViewModel(
             coordinator: self,
             configurator: configurator,
-            model: model
+            model: ImageGalleryModuleModel(imageGalleryItem: model)
         )
         let viewController = ImageGalleryModuleViewController(viewModel: viewModel)
         navigationController.pushViewController(
@@ -44,11 +44,15 @@ extension ImageGalleryModuleCoordinator {
 
 // MARK: - Navigation OUT
 
+// MARK: - MainImageModel Dependancy
+
 extension ImageGalleryModuleCoordinator {
-    func showLargeImage(imageGalleryModel: ImageGalleryModel, selectedIndex: Int, animted: Bool) {
+    func showLargeImage(
+        imageGalleryModuleModel: ImageGalleryModuleModel,
+        animted: Bool
+        ) {
         let model = MainImageModel(
-            imageGalleryModel: imageGalleryModel,
-            selectedIndex: selectedIndex
+            model: imageGalleryModuleModel
         )
         let interactor = MainImageInteractorApi()
         let configurator = MainImageConfigurator(mainImageInteractor: interactor)
@@ -65,26 +69,21 @@ extension ImageGalleryModuleCoordinator {
     }
 }
 
-// MARK: - MainImageModel Dependancy
 private extension MainImageModel {
-    init(
-        imageGalleryModel: ImageGalleryModel,
-        selectedIndex: Int
-        ) {
-        let mainImageModels = imageGalleryModel.images.compactMap { imageGalleryModel -> MainImageModel.ImageModel? in
-            return MainImageModel.ImageModel(bigImageUrl: imageGalleryModel.bigImageUrl)
+    init(model: ImageGalleryModuleModel) {
+        assert(model.selectedIndex != nil)
+        let mainImageModels = model.imageGalleryItem.images.compactMap { imageGalleryItem -> MainImageModel.ImageModel? in
+            return MainImageModel.ImageModel(bigImageUrl: imageGalleryItem.bigImageUrl)
         }
-        let model = MainImageModel(
-            selectedIndex: selectedIndex,
+        self.init(
+            selectedIndex: model.selectedIndex ?? 0,
             models: mainImageModels
         )
-        self = model
     }
 }
 
 private extension MainImageModel.ImageModel {
-    init(imageGalleryModel: ImageGalleryModel.Image) {
-        let model = MainImageModel.ImageModel(bigImageUrl: imageGalleryModel.bigImageUrl)
-        self = model
+    init(imageGalleryItemImage: ImageGalleryItem.Image) {
+        self.init(bigImageUrl: imageGalleryItemImage.bigImageUrl)
     }
 }

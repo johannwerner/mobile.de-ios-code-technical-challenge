@@ -9,11 +9,10 @@ workspace 'mobile'
 project 'mobilep.xcodeproj'
 
 def shared_pods
-    pod 'PureLayout'
-    pod 'R.swift', '5.0.3'
-    pod 'RxCocoa'
+    pod 'PureLayout', '3.1.4'
+    pod 'RxCocoa', '5.0.0'
     # Network layer abstraction
-    pod 'Alamofire', '4.8.1'
+    pod 'Alamofire', '4.9.0'
     pod 'RxAlamofire', '5.0.0'
     pod 'Kingfisher', '5.7.1'
 end

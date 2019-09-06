@@ -40,11 +40,9 @@ extension IntroductionModuleCoordinator {
 
 // MARK: - Navigation OUT
 
+// MARK: - ImageGalleryDependency
 extension IntroductionModuleCoordinator {
 
-    
-
-    // MARK: - ImageGalleryDependency
     func showImageGallery(
         model: IntroductionImageGalleryModel,
         animated: Bool
@@ -56,29 +54,27 @@ extension IntroductionModuleCoordinator {
             navigationController: navigationController,
             configurator: configurator
         )
-        let imageGalleryModel = ImageGalleryModel(introductionModel: model)
+        let imageGalleryItem = ImageGalleryItem(introductionModel: model)
         coordinator.showImageGallery(
-            model: imageGalleryModel,
+            model: imageGalleryItem,
             animated: true
         )
     }
 }
 
-private extension ImageGalleryModel {
+private extension ImageGalleryItem {
     
     init(introductionModel: IntroductionImageGalleryModel) {
-        let images = introductionModel.images.map { image -> ImageGalleryModel.Image in
-            return ImageGalleryModel.Image(introductionModelImage: image)
+        let images = introductionModel.images.map { image -> ImageGalleryItem.Image in
+            return ImageGalleryItem.Image(introductionModelImage: image)
         }
-        let model = ImageGalleryModel(images: images)
-        self = model
+        self.init(images: images)
     }
 }
 
-private extension ImageGalleryModel.Image {
+private extension ImageGalleryItem.Image {
     
     init(introductionModelImage: IntroductionImageGalleryModel.Image) {
-        let model = ImageGalleryModel.Image(uri: introductionModelImage.uri)
-        self = model
+        self.init(uri: introductionModelImage.uri)
     }
 }

@@ -13,7 +13,7 @@ class ImageGalleryModuleViewController: UIViewController {
     private let viewAction = PublishRelay<ImageGalleryModuleViewAction>()
     
     // MARK: View components
-    private let showImagesButton = UIButton()
+    private let primaryButton = UIButton()
     private let collectionView: UICollectionView
     
     // MARK: Tooling
@@ -60,9 +60,13 @@ private extension ImageGalleryModuleViewController {
     func setUpViews() {
         title = AppConstants.appName
         view.backgroundColor = .white
+        
+        setUpCollectionView()
+        setUpPrimaryButton()
+    }
+    
+    func setUpCollectionView() {
         view.addSubview(collectionView)
-        
-        
         collectionView.autoPinEdgesToSuperviewEdges()
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -71,16 +75,22 @@ private extension ImageGalleryModuleViewController {
             forCellWithReuseIdentifier: MainImageCollectionViewCell.className
         )
         collectionView.alpha = 0
+    }
+    
+    func setUpPrimaryButton() {
+        view.addSubview(primaryButton)
+        primaryButton.autoAlignAxis(toSuperviewAxis: .vertical)
+        primaryButton.autoPinEdge(toSuperviewEdge: .bottom, withInset: 50)
+        primaryButton.autoSetDimension(.height, toSize: 50)
+        primaryButton.autoSetDimension(.width, toSize: 200, relation: .greaterThanOrEqual)
+        primaryButton.layer.cornerRadius = 4.0
         
-        view.addSubview(showImagesButton)
-        showImagesButton.autoCenterInSuperview()
-        showImagesButton.autoSetDimensions(to: CGSize(width: 150, height: 100))
-        showImagesButton.setTitleColor(.blue, for: .normal)
-        showImagesButton.setTitle("image_gallery_primary_button".localizedString(), for: .normal)
-        
-        showImagesButton.rx.tap.subscribe(onNext: { [unowned self] in
+        primaryButton.backgroundColor = ColorTheme.primaryAppColor
+        primaryButton.setTitle("image_gallery_primary_button".localizedString(), for: .normal)
+        primaryButton.rx.tap.subscribe(onNext: { [unowned self] _ in
             self.viewAction.accept(.showImages)
-        }).disposed(by: disposeBag)
+        })
+        .disposed(by: disposeBag)
     }
     
     /// Binds controller user events to view model.
@@ -101,7 +111,7 @@ private extension ImageGalleryModuleViewController {
                 switch effect {
                 case .showImages:
                     self.collectionView.reloadData()
-                    self.showImagesButton.isHidden = true
+                    self.primaryButton.isHidden = true
                     UIView.animate(withDuration: 0.4, animations: { [weak self]  in
                         self?.collectionView.alpha = 1.0
                     })

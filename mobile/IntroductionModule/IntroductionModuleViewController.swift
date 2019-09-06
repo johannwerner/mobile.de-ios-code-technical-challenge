@@ -52,13 +52,13 @@ private extension  IntroductionModuleViewController {
 
     /// Initializes and configures components in controller.
     func setUpViews() {
-        setUpNextButton()
+        setUpPrimaryButton()
         setUpTitleLable()
         setUpSubtitleLable()
         setUpActivityIndicator()
     }
     
-    func setUpNextButton() {
+    func setUpPrimaryButton() {
         view.addSubview(primaryButton)
         primaryButton.autoAlignAxis(toSuperviewAxis: .vertical)
         primaryButton.autoPinEdge(toSuperviewEdge: .bottom, withInset: 50)
@@ -68,7 +68,7 @@ private extension  IntroductionModuleViewController {
         
         primaryButton.backgroundColor = ColorTheme.primaryAppColor
         primaryButton.setTitle(
-            "introduction_primary_button".localizedString(),
+            "introduction_primary_button".localizedString(tableName: IntroductionConstants.localizedName),
             for: .normal
         )
         primaryButton.rx.tap.subscribe(onNext: { [unowned self] _ in
@@ -90,7 +90,7 @@ private extension  IntroductionModuleViewController {
         subtitleLabel.autoAlignAxis(toSuperviewAxis: .vertical)
         subtitleLabel.autoPinEdge(.top, to: .bottom, of: titleLabel, withOffset: 17)
         subtitleLabel.font = UIFont.systemFont(ofSize: 17)
-        subtitleLabel.text = "introduction_sub_title".localizedString()
+        subtitleLabel.text = "introduction_sub_title".localizedString(tableName: IntroductionConstants.localizedName)
     }
     
     func setUpActivityIndicator() {
@@ -112,7 +112,7 @@ private extension  IntroductionModuleViewController {
     func stopLoadingAnimations() {
         self.activityIndicator.stopAnimating()
         primaryButton.setTitle(
-            "introduction_primary_button".localizedString(),
+            "introduction_primary_button".localizedString(tableName: IntroductionConstants.localizedName),
             for: .normal
         )
     }
@@ -137,6 +137,8 @@ private extension  IntroductionModuleViewController {
                 self.stopLoadingAnimations()
             case .loading:
                 self.startLoadingAnimations()
+            case .error:
+                self.stopLoadingAnimations()
             }
         })
         .disposed(by: disposeBag)}

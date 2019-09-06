@@ -7,7 +7,7 @@ import RxSwift
 class ImageGalleryModuleViewModel {
 
     // MARK: - Properties
-    private var model: ImageGalleryModel
+    private var model: ImageGalleryModuleModel
     
     // MARK: - View Effect
     let viewEffect = PublishRelay<ImageGalleryModuleViewEffect>()
@@ -23,7 +23,7 @@ class ImageGalleryModuleViewModel {
     
     init(coordinator: ImageGalleryModuleCoordinator,
          configurator: ImageGalleryModuleConfigurator,
-         model: ImageGalleryModel
+         model: ImageGalleryModuleModel
         ) {
         self.coordinator = coordinator
         self.useCase = ImageGalleryModuleUseCase(interactor: configurator.imageGalleryModuleInteractor)
@@ -38,11 +38,11 @@ class ImageGalleryModuleViewModel {
 extension ImageGalleryModuleViewModel {
     
     var numberOfModels: Int {
-        return model.images.count
+        return model.imageGalleryItem.images.count
     }
     
-    func modelForIndex(index: Int) -> ImageGalleryModel.Image? {
-        return model.images[safe: index]
+    func modelForIndex(index: Int) -> ImageGalleryItem.Image? {
+        return model.imageGalleryItem.images[safe: index]
     }
     
     func bind(to viewAction: PublishRelay<ImageGalleryModuleViewAction>) {
@@ -53,9 +53,9 @@ extension ImageGalleryModuleViewModel {
                 case .showImages:
                     self.showImages()
                 case .selectedIndex(let index):
+                    self.model.selectedIndex = index
                     self.coordinator.showLargeImage(
-                        imageGalleryModel: self.model,
-                        selectedIndex: index,
+                        imageGalleryModuleModel: self.model,
                         animted: true
                     )
                 }

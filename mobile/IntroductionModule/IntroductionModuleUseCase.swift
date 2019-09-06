@@ -23,10 +23,10 @@ extension IntroductionModuleUseCase {
                 case .loading:
                     return .loading
                 case .success(let data):
-                    guard let imageGalleryModel = IntroductionImageGalleryModel.parse(from: data) else {
+                    guard let imageGalleryItem = IntroductionImageGalleryModel.parse(from: data) else {
                         return .error
                     }
-                    return .success(imageGalleryModel)
+                    return .success(imageGalleryItem)
                 case .error:
                     return .error
                 }
