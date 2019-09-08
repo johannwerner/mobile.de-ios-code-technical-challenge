@@ -75,15 +75,13 @@ private extension MainImageModel {
         let mainImageModels = model.imageGalleryItem.images.compactMap { imageGalleryItem -> MainImageModel.ImageModel? in
             return MainImageModel.ImageModel(bigImageUrl: imageGalleryItem.bigImageUrl)
         }
-        self.init(
-            selectedIndex: model.selectedIndex ?? 0,
-            models: mainImageModels
-        )
+        self.selectedIndex = model.selectedIndex ?? 0
+        self.models = mainImageModels
     }
 }
 
 private extension MainImageModel.ImageModel {
     init(imageGalleryItemImage: ImageGalleryItem.Image) {
-        self.init(bigImageUrl: imageGalleryItemImage.bigImageUrl)
+        self.bigImageUrl = imageGalleryItemImage.bigImageUrl
     }
 }
