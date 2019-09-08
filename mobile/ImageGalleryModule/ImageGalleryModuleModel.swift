@@ -2,7 +2,7 @@
 enum ImageGalleryModuleStatus {
     case error
     case loading
-    case success([ImageGalleryModel])
+    case success
 }
 
 /// View effect enum for ImageGalleryModule.
@@ -16,7 +16,9 @@ enum ImageGalleryModuleViewAction {
     case selectedIndex(Int)
 }
 
-struct ImageGalleryConstants {
-    static var url: String = "https://m.mobile.de/svc/a/281794529"
-    static var imagesKeyValue = "images"
+struct ImageGalleryModuleModel {
+    var imageGalleryItem: ImageGalleryItem
+    ///Keeps track of which item has been selected.
+    /// Nil if nothing has been selected
+    var selectedIndex: Int?
 }

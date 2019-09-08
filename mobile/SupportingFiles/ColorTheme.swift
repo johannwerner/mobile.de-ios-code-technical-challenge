@@ -7,7 +7,11 @@ struct ColorTheme {}
 extension ColorTheme {
     
     static var primaryAppColor: UIColor {
-        return ColorTheme.colorWith(red: 101, green: 179, blue: 239)
+        return ColorTheme.colorWith(
+            red: 101,
+            green: 179,
+            blue: 239
+        )
     }
 }
 

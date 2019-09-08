@@ -15,6 +15,7 @@ final class IntroductionModuleViewController: UIViewController {
     private let primaryButton = UIButton()
     private let titleLabel = UILabel()
     private let subtitleLabel = UILabel()
+    private let activityIndicator = UIActivityIndicatorView()
     
     // MARK: Tooling
     private let disposeBag = DisposeBag()
@@ -51,12 +52,13 @@ private extension  IntroductionModuleViewController {
 
     /// Initializes and configures components in controller.
     func setUpViews() {
-        setUpNextButton()
+        setUpPrimaryButton()
         setUpTitleLable()
         setUpSubtitleLable()
+        setUpActivityIndicator()
     }
     
-    func setUpNextButton() {
+    func setUpPrimaryButton() {
         view.addSubview(primaryButton)
         primaryButton.autoAlignAxis(toSuperviewAxis: .vertical)
         primaryButton.autoPinEdge(toSuperviewEdge: .bottom, withInset: 50)
@@ -66,7 +68,7 @@ private extension  IntroductionModuleViewController {
         
         primaryButton.backgroundColor = ColorTheme.primaryAppColor
         primaryButton.setTitle(
-            "introduction_primary_button".localizedString(),
+            "introduction_primary_button".localizedString(tableName: IntroductionConstants.localizedName),
             for: .normal
         )
         primaryButton.rx.tap.subscribe(onNext: { [unowned self] _ in
@@ -88,7 +90,31 @@ private extension  IntroductionModuleViewController {
         subtitleLabel.autoAlignAxis(toSuperviewAxis: .vertical)
         subtitleLabel.autoPinEdge(.top, to: .bottom, of: titleLabel, withOffset: 17)
         subtitleLabel.font = UIFont.systemFont(ofSize: 17)
-        subtitleLabel.text = "introduction_sub_title".localizedString()
+        subtitleLabel.text = "introduction_sub_title".localizedString(tableName: IntroductionConstants.localizedName)
+    }
+    
+    func setUpActivityIndicator() {
+        primaryButton.addSubview(activityIndicator)
+        activityIndicator.autoCenterInSuperview()
+        activityIndicator.style = .whiteLarge
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.stopAnimating()
+    }
+    
+    func startLoadingAnimations() {
+        self.activityIndicator.startAnimating()
+        primaryButton.setTitle(
+            "",
+            for: .normal
+        )
+    }
+    
+    func stopLoadingAnimations() {
+        self.activityIndicator.stopAnimating()
+        primaryButton.setTitle(
+            "introduction_primary_button".localizedString(tableName: IntroductionConstants.localizedName),
+            for: .normal
+        )
     }
     
     /// Binds controller user events to view model.
@@ -105,9 +131,14 @@ private extension  IntroductionModuleViewController {
     func observeViewEffect() {
         viewModel
         .viewEffect
-        .subscribe(onNext: { effect in
+        .subscribe(onNext: { [unowned self] effect in
             switch effect {
-            case .success:break
+            case .success:
+                self.stopLoadingAnimations()
+            case .loading:
+                self.startLoadingAnimations()
+            case .error:
+                self.stopLoadingAnimations()
             }
         })
         .disposed(by: disposeBag)}

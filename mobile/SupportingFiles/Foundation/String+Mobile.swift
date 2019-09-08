@@ -13,13 +13,12 @@ extension String {
     ///missing string will be displayed when no value exists.
     /// - Parameters:
     ///   - comment: The comment to place above the key-value pair in the strings file.
-    func localizedString(_ comment: String = "") -> String {
-        let localizedString = NSLocalizedString(
+    func localizedString(_ comment: String = "", tableName: String = "mobile") -> String {
+        return NSLocalizedString(
             self,
-            tableName: "mobile",
+            tableName: tableName,
             value: "missing string",
             comment: comment
         )
-        return localizedString
     }
 }

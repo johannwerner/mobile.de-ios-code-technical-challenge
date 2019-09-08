@@ -5,19 +5,19 @@ import RxCocoa
 /// - Requires: `RxSwift`
 final class MainImageViewController: UIViewController {
     
-    // MARK: Dependencies
+// MARK: Dependencies
     private let viewModel: MainImageViewModel
     
-    // MARK: Rx
+// MARK: Rx
     private let viewAction = PublishRelay<MainImageViewAction>()
     
-    // MARK: View components
+// MARK: View components
     private let collectionView: UICollectionView
     
-    // MARK: Tooling
+// MARK: Tooling
     private let disposeBag = DisposeBag()
 
-    // MARK: - Life cycle
+// MARK: - Life cycle
     
     init(viewModel: MainImageViewModel) {
         self.viewModel = viewModel
@@ -32,16 +32,7 @@ final class MainImageViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        collectionView.isHidden = false
-        let selectedIndexPath = IndexPath(
-            item: viewModel.selectedIndex,
-            section: 0
-        )
-        collectionView.scrollToItem(
-            at: selectedIndexPath,
-            at: .centeredHorizontally,
-            animated: true
-        )
+        scrollToItem(index: viewModel.selectedIndex)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -89,6 +80,23 @@ private extension MainImageViewController {
     }
 }
 
+// MARK: - Private
+
+private extension MainImageViewController {
+    func scrollToItem(index: Int) {
+        collectionView.isHidden = false
+        let selectedIndexPath = IndexPath(
+            item: index,
+            section: 0
+        )
+        collectionView.scrollToItem(
+            at: selectedIndexPath,
+            at: .centeredHorizontally,
+            animated: true
+        )
+    }
+}
+
 // MARK: - Rx
 
 private extension MainImageViewController {
@@ -114,6 +122,11 @@ extension MainImageViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionViewImplementation(collectionView, cellForItemAt: indexPath)
+        return cell
+    }
+    
+    private func collectionViewImplementation(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainImageCollectionViewCell.className, for: indexPath)
         guard let model = viewModel.modelForIndex(index: indexPath.row) else {
             assertionFailure("model is nil")
@@ -137,4 +150,9 @@ extension MainImageViewController: UICollectionViewDelegateFlowLayout  {
         )
         return size
     }
+}
+
+// MARK: - CollectionView Private
+private extension MainImageViewController {
+
 }

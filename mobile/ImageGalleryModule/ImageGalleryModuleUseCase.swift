@@ -1,8 +1,8 @@
 import RxSwift
 
-/// downloads a list of images from the network and parses it to ImageGalleryModel
+/// <#Brief description of the purpose of the use case#>
 /// - Requires: `RxSwift`, `Async`
-final class ImageGalleryModuleUseCase {
+class ImageGalleryModuleUseCase {
     
     // MARK: Dependencies
     private let interactor: ImageGalleryModuleInteractor
@@ -16,30 +16,4 @@ final class ImageGalleryModuleUseCase {
 
 // MARK: - Public functions
 
-extension ImageGalleryModuleUseCase {
-    
-    func fetchImages() -> Observable<ImageGalleryModuleStatus> {
-        return self.interactor.fetchImages()
-            .map { (result: Async<Any>) -> ImageGalleryModuleStatus in
-                switch result {
-                case .loading:
-                    return .loading
-                case .success(let data):
-                    guard let imageData = data as? Dictionary<String, Any> else {
-                        return.error
-                    }
-                    let keyValue = ImageGalleryConstants.imagesKeyValue
-                    guard let listOfArray = imageData[keyValue] as? Array<Dictionary<String, Any>> else {
-                        return .error
-                    }
-                    let listOfModels = listOfArray.compactMap({ dictionary -> ImageGalleryModel? in
-                        let imageGalleryModel = ImageGalleryModel.parse(from: dictionary)
-                        return imageGalleryModel
-                    })
-                    return .success(listOfModels)
-                case .error:
-                    return .error
-                }
-        }
-    }
-}
+extension ImageGalleryModuleUseCase {}

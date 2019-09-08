@@ -49,6 +49,14 @@ extension MainImageViewModel {
     }
     
     func bind(to viewAction: PublishRelay<MainImageViewAction>) {
+        bindImplementation(to: viewAction)
+    }
+}
+
+// MARK: - Private functions
+
+private extension MainImageViewModel {
+    func bindImplementation(to viewAction: PublishRelay<MainImageViewAction>) {
         viewAction
             .asObservable()
             .subscribe(onNext: { viewAction in
@@ -59,11 +67,8 @@ extension MainImageViewModel {
             })
             .disposed(by: disposeBag)
     }
+    
 }
-
-// MARK: - Private functions
-
-private extension MainImageViewModel {}
 
 // MARK: - Rx
 

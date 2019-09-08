@@ -69,11 +69,13 @@ private extension AppDelegate {
         coordinator.showIntroduction(animated: true)
     }
     
-    func showImageGallery(navigationController: UINavigationController) {
-        let interactor = ImageGalleryModuleInteractorApi()
-        let configurator = ImageGalleryModuleConfigurator(imageGalleryModuleInteractor: interactor)
-        let coordinator = ImageGalleryModuleCoordinator(navigationController: navigationController, configurator: configurator)
-        coordinator.showImageGallery(animated: true)
+    func showMainImage(navigationController: UINavigationController) {
+        let configurator = MainImageConfigurator(mainImageInteractor: MainImageInteractorApi())
+        let coordinator = MainImageCoordinator(navigationController: navigationController, configurator: configurator)
+        let imageModel = MainImageModel.ImageModel(bigImageUrl: "https://www.bonecollector.com/wp-content/uploads/2017/02/shed-hunting-dog-training-tips_pic4.jpg")
+        let mainImageModel = MainImageModel(selectedIndex: 0, models: [imageModel])
+        coordinator.showLargeImage(model: mainImageModel, animated: true)
     }
+
 }
 

@@ -1,7 +1,5 @@
 import RxSwift
 
-/// Protocol for fetching images for Image Gallery
+/// <#Brief description of the purpose of the interactor#>
 /// - Requires: `RxSwift`
-protocol ImageGalleryModuleInteractor {
-    func fetchImages() -> Observable<Async<Any>> 
-}
+protocol ImageGalleryModuleInteractor {}

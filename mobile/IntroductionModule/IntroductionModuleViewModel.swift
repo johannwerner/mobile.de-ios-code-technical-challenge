@@ -4,19 +4,19 @@ import RxSwift
 ///
 /// - Requires: `RxSwift`, `RxCocoa`
 /// - Note: A view model can refer to one or more use cases.
-final class  IntroductionModuleViewModel {
+final class IntroductionModuleViewModel {
 
-    // MARK: MvRx
-    let viewEffect = PublishRelay< IntroductionModuleViewEffect>()
+// MARK: MvRx
+    let viewEffect = PublishRelay<IntroductionModuleViewEffect>()
     
-    // MARK: Dependencies
+// MARK: Dependencies
     private let coordinator: IntroductionModuleCoordinator
     private let useCase: IntroductionModuleUseCase
     
-    // MARK: Tooling
+// MARK: Tooling
     private let disposeBag = DisposeBag()
 
-    // MARK: - Life cycle
+// MARK: - Life cycle
     
     init(
         coordinator: IntroductionModuleCoordinator,
@@ -39,7 +39,7 @@ extension  IntroductionModuleViewModel {
             .subscribe(onNext: { [unowned self] viewAction in
                 switch viewAction {
                 case .primaryButtonPressed:
-                    self.showNextView()
+                    self.fetchImages()
                 }
             })
             .disposed(by: disposeBag)
@@ -49,8 +49,28 @@ extension  IntroductionModuleViewModel {
 // MARK: - Private functions
 
 private extension  IntroductionModuleViewModel {
-    func showNextView() {
-        coordinator.showImageGallery(animated: true)
+    
+    func fetchImages() {
+        self.useCase.fetchImages()
+            .subscribe(onNext: { [unowned self] status in
+                switch status {
+                case .success(let model):
+                    self.viewEffect.accept(.success)
+                    self.showNextView(model: model)
+                case .error:
+                    self.viewEffect.accept(.error)
+                case .loading:
+                    self.viewEffect.accept(.loading)
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func showNextView(model: IntroductionImageGalleryModel) {
+        coordinator.showImageGallery(
+            model: model,
+            animated: true
+        )
     }
 }
 
@@ -65,6 +85,8 @@ private extension  IntroductionModuleViewModel {
             .subscribe(onNext: { effect in
                 switch effect {
                 case .success: break
+                case .loading: break
+                case   .error: break
                 }
             })
             .disposed(by: disposeBag)

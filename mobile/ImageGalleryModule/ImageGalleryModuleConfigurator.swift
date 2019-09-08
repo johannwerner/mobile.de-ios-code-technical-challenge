@@ -1,7 +1,7 @@
 import RxCocoa
 import RxSwift
 
-final class ImageGalleryModuleConfigurator {
+class ImageGalleryModuleConfigurator {
     
     // MARK: Dependencies
     
